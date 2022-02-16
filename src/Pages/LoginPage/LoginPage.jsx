@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import LoginCtx from "../../Context/LoginContext";
 import LoginModal from "../../Components/LoginModal/LoginModal";
 import { getCurrentYear } from "../../GeneralFunctions";

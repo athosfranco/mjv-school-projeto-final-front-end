@@ -7,6 +7,10 @@ export const lightTheme = {
   danger: "#FF5B5B",
   warning: "#FFBB54",
   info: "#58CDFF",
+  primary: "#A91B1C",
+  secondary: "#EA5F28",
+  terciary: "#EF9A91",
+  quatinery: "#F1E6B9",
 };
 
 export const darkTheme = {
@@ -19,4 +23,8 @@ export const darkTheme = {
   warning: "#FFBB54",
   info: "#58CDFF",
   disabled: (theme) => (theme === "light" ? "#d1d1d1" : "#353535"),
+  primary: "#A91B1C",
+  secondary: "#EA5F28",
+  terciary: "#EF9A91",
+  quatinery: "#F1E6B9",
 };

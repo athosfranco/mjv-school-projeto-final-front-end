@@ -2,7 +2,6 @@ import { useState, createContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./Styles/ThemeConfig";
 import { GlobalStyles } from "./Styles/GlobalStyles";
-import LoginPage from "./Pages/LoginPage/LoginPage";
 import LoginProvider from "./Context/LoginProvider";
 import Rotas from "./Rotas";
 
