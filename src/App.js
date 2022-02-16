@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, createContext } from "react";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./Styles/ThemeConfig";
+import { GlobalStyles } from "./Styles/GlobalStyles";
+import LoginPage from "./Pages/LoginPage/LoginPage";
+import LoginProvider from "./Context/LoginProvider";
+import Rotas from "./Rotas";
+
+export const ThemeCtx = createContext();
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const handleToggleTheme = () => (theme == "light" ? setTheme("dark") : setTheme("light"));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <ThemeCtx.Provider value={{ handleToggleTheme, theme }}>
+          <LoginProvider>
+            <Rotas />
+          </LoginProvider>
+        </ThemeCtx.Provider>
+      </ThemeProvider>
+    </>
   );
 }
 
