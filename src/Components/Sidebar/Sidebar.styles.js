@@ -14,6 +14,9 @@ export const SidebarLogo = styled.img`
   &:hover {
     transform: scale(1.05);
   }
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export const SidebarContainer = styled.div`
