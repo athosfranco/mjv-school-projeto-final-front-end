@@ -15,6 +15,7 @@ import Financeiros from "./Pages/Financeiros/Financeiros";
 import Cirurgia from "./Pages/Cirurgia/Cirurgia";
 import Exames from "./Pages/Exames/Exames";
 import ContaMedica from "./Pages/Conta Médica/ContaMedica";
+import Configuracoes from "./Pages/Configurações/Configuracoes";
 ///
 
 const Rotas = () => {
@@ -27,14 +28,15 @@ const Rotas = () => {
       element: state.userLoggedIn ? <Dashboard /> : <LoginPage />,
       children: [
         { path: "", element: <Inicio /> },
-        { path: "/mensagem", element: <Mensagem /> },
-        { path: "/paciente", element: <Paciente /> },
-        { path: "/atendimentos", element: <Atendimentos /> },
-        { path: "/metas", element: <Metas /> },
-        { path: "/financeiros", element: <Financeiros /> },
-        { path: "/cirurgia", element: <Cirurgia /> },
-        { path: "/exames", element: <Exames /> },
-        { path: "/conta-medica", element: <ContaMedica /> },
+        { path: "mensagem", element: <Mensagem /> },
+        { path: "paciente", element: <Paciente /> },
+        { path: "atendimentos", element: <Atendimentos /> },
+        { path: "metas", element: <Metas /> },
+        { path: "financeiros", element: <Financeiros /> },
+        { path: "cirurgia", element: <Cirurgia /> },
+        { path: "exames", element: <Exames /> },
+        { path: "conta-medica", element: <ContaMedica /> },
+        { path: "configuracoes", element: <Configuracoes /> },
       ],
     },
   ]);

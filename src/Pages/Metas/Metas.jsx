@@ -1,7 +1,12 @@
 import React from "react";
+import UnderConstruction from "../../Components/UnderConstruction/UnderConstruction";
 
 const Metas = () => {
-  return <div>Metas</div>;
+  return (
+    <>
+      <UnderConstruction />
+    </>
+  );
 };
 
 export default Metas;
