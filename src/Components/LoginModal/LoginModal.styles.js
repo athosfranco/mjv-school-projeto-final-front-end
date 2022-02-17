@@ -15,6 +15,17 @@ export const ModalContainer = styled.div`
   margin-left: -200px; /* Negative half of width. */
   //shadow
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+  //animation
+  animation: slide-down 1000ms ease-out forwards;
+  @keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export const Logo = styled.div`

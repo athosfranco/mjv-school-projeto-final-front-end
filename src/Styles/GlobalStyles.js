@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
         outline: 0;
         transition: 0.1s;
         font-family: 'Fira Sans', sans-serif;
+        
     } 
     .container {
         margin: auto;
@@ -25,7 +26,8 @@ export const GlobalStyles = createGlobalStyle`
     }
     body {
         background: ${(props) => props.theme.background};
-        color: ${(props) => props.theme.text};        
+        color: ${(props) => props.theme.text};      
+        overflow-x: hidden;  
     }
     h1 {
         color: ${(props) => props.theme.titles};        

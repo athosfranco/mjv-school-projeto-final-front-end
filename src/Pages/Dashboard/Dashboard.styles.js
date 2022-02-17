@@ -5,5 +5,5 @@ export const PageContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  margin: 120px 20px 0 22vw;
+  margin: 120px 20px 0 23vw;
 `;

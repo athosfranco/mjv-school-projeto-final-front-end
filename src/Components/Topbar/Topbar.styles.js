@@ -12,7 +12,7 @@ export const TopbarContainer = styled.div`
   right: 0;
   width: 77vw;
   cursor: default;
-  ${({ scroll }) => scroll > 0 && "box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)"}; ;
+  ${({ scroll }) => scroll > 0 && "box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)"};
 `;
 
 export const LeftTopbarContent = styled.div`
@@ -37,6 +37,7 @@ export const CurrentPage = styled.h3`
 
 export const WelcomeMsg = styled.span`
   margin-top: 5px;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const UserAvatar = styled.img`
@@ -44,4 +45,11 @@ export const UserAvatar = styled.img`
   height: 74px;
   border-radius: 22px;
   margin-right: 10px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 `;

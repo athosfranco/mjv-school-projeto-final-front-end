@@ -5,6 +5,17 @@ export const Container = styled.div`
   margin: 10px;
   position: fixed;
   width: 20vw;
+   //animation
+   animation: slide-left 1000ms ease-out forwards;
+  @keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
 
 export const SidebarLogo = styled.img`

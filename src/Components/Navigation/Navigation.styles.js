@@ -16,6 +16,9 @@ export const NavItem = styled.div`
     color: #a91b1c;
     background-color: #a91b1c26;
   }
+  &:active {
+    transform: scale(0.95);
+  }
 `;
 
 export const NavIcon = styled.div`
