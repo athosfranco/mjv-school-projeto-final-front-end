@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   CurrentPage,
   LeftTopbarContent,
@@ -10,8 +10,20 @@ import {
 import avatar from "../../Assets/avatar.png";
 
 const Topbar = () => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  console.log(offset);
+
   return (
-    <TopbarContainer>
+    <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
         <CurrentPage>Início</CurrentPage>
         <WelcomeMsg>Olá, Maria</WelcomeMsg>

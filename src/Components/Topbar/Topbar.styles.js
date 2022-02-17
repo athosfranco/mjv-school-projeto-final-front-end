@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
 export const TopbarContainer = styled.div`
-  flex: 5;
+  background-color: ${({ scroll, theme }) => (scroll > 0 ? theme.body : "transparent")};
   margin: 10px;
   height: 90px;
   display: flex;
   border-radius: 18px;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 77vw;
+  cursor: default;
+  ${({ scroll }) => scroll > 0 && "box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)"}; ;
 `;
 
 export const LeftTopbarContent = styled.div`

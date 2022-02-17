@@ -5,6 +5,5 @@ export const PageContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  margin-top: 100px;
-  margin-left: 150px;
+  margin: 120px 20px 0 22vw;
 `;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   flex: 1;
   margin: 10px;
+  position: fixed;
+  width: 20vw;
 `;
 
 export const SidebarLogo = styled.img`
