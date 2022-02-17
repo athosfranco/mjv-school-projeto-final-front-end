@@ -15,7 +15,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: "#24232C",
-  text: "#FFFFFF",
+  text: "#eeeeee",
   border: "darkgray",
   background: "#17161E",
   success: "#00A389",
