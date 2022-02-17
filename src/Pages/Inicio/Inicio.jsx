@@ -1,6 +1,6 @@
 import React from "react";
 import InfoCard from "../../Components/InfoCard/InfoCard";
-import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider } from "./Inicio.styles";
+import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider } from "../Pages.styles";
 import cirurgiaImg from "../../Assets/cirurgias_icon.png";
 import exameImg from "../../Assets/exames_icon.png";
 import contaImg from "../../Assets/contas_icon.png";
