@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     * {
         box-sizing: border-box;
+        padding: 0;
         margin: 0;
         outline: 0;
         transition: 0.1s;
