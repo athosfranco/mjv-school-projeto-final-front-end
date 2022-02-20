@@ -39,6 +39,8 @@ const Inicio = () => {
         <SectionTitle>Casos para avaliar</SectionTitle>
         <Divider />
         <SectionWrapper></SectionWrapper>
+
+        <SectionWrapper></SectionWrapper>
       </SectionContainer>
     </PageContainer>
   );
