@@ -15,11 +15,12 @@ export const TopbarContainer = styled.div`
   ${({ scroll }) => scroll > 0 && "box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)"};
   //media query
   @media only screen and (max-width: 980px) {
-    left: 0;
     margin-left: 16vw;
+    top: 10px;
     justify-content: space-between;
     margin-top: 0;
     width: 75vw;
+    height: 80px;
   }
 `;
 

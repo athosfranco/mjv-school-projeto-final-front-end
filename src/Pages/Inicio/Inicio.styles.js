@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const CasesContainer = styled.div`
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 980px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 `;
 
 export const Table = styled.table`
