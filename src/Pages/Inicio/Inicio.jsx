@@ -4,6 +4,7 @@ import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider 
 import cirurgiaImg from "../../Assets/cirurgias_icon.png";
 import exameImg from "../../Assets/exames_icon.png";
 import contaImg from "../../Assets/contas_icon.png";
+import Casos from "./Casos";
 
 const cardData = [
   {
@@ -38,9 +39,7 @@ const Inicio = () => {
       <SectionContainer>
         <SectionTitle>Casos para avaliar</SectionTitle>
         <Divider />
-        <SectionWrapper></SectionWrapper>
-
-        <SectionWrapper></SectionWrapper>
+        <Casos />
       </SectionContainer>
     </PageContainer>
   );
