@@ -7,6 +7,10 @@ export const PageContainer = styled.div`
 export const SectionTitle = styled.span`
   font-family: "Poppins", sans-serif;
   font-size: 22px;
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 18px;
+  }
 `;
 
 export const Divider = styled.div`
@@ -19,6 +23,10 @@ export const Divider = styled.div`
 export const SectionWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
+  //media query
+  @media only screen and (max-width: 980px) {
+    flex-direction: column;
+  }
 `;
 
 export const SectionContainer = styled.div`

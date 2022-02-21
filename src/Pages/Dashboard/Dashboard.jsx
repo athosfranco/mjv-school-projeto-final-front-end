@@ -7,11 +7,22 @@ import { useLocation } from "react-router-dom";
 import { REQ_BODY } from "../../data";
 import axios from "axios";
 
+//////dados de conexão da api
+const URL_BASE = "http://44.202.73.116:50660/api/";
+
+/////// Endpoints necessárias para fazer a requisiçao dos dados
+const CASOS_ENDPOINT =
+  "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=999999&order_by=CAS_Id";
+
 const Dashboard = () => {
+  //sidebar status
+  const [mobileSidebarExpanded, setMobileSidebarExpanded] = useState(false);
+
   //scrolla pro topo sempre que usuario mudar pagina
   const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setMobileSidebarExpanded(false);
   }, [location.pathname]);
 
   //tela de loading entre fetchs
@@ -22,13 +33,6 @@ const Dashboard = () => {
 
   /////////////////////// data state
   const [casos, setCasos] = useState(false);
-
-  //////dados de conexão da api
-  const URL_BASE = "http://44.202.73.116:50660/api/";
-
-  /////// Endpoints necessárias para fazer a requisiçao dos dados
-  const CASOS_ENDPOINT =
-    "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=999999&order_by=CAS_Id";
 
   ////////////////////////////////////////////////////////////
 
@@ -65,9 +69,11 @@ const Dashboard = () => {
 
   /////////////////////////////////////////////////////////////////////
 
+  const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
+
   return (
     <PageContainer>
-      <Sidebar />
+      <Sidebar onSidebarToggle={sidebarToggleHandler} mobileSidebarExpanded={mobileSidebarExpanded} />
       <Topbar />
       <Main>
         <Outlet />

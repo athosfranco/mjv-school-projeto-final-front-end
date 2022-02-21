@@ -1,16 +1,17 @@
 import React from "react";
-import { Container, SidebarLogo, SidebarContainer } from "./Sidebar.styles";
+import { Container, SidebarLogo, SidebarContainer, SidebarMenuBtn } from "./Sidebar.styles";
 import logo from "../../Assets/junta_cor.png";
 import UIContainer from "../../UI/UIContainer/UIContainer";
 import Navigation from "../Navigation/Navigation";
 
-const Sidebar = () => {
+const Sidebar = ({ onSidebarToggle, mobileSidebarExpanded }) => {
   return (
-    <Container>
+    <Container mobileSidebarExpanded={mobileSidebarExpanded}>
+      <SidebarMenuBtn onClick={onSidebarToggle} />
       <UIContainer>
         <SidebarContainer>
           <SidebarLogo src={logo} />
-          <Navigation />
+          <Navigation mobileSidebarExpanded={mobileSidebarExpanded} />
         </SidebarContainer>
       </UIContainer>
     </Container>

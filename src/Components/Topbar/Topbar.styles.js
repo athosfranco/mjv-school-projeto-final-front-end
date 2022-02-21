@@ -13,6 +13,14 @@ export const TopbarContainer = styled.div`
   width: 77vw;
   cursor: default;
   ${({ scroll }) => scroll > 0 && "box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)"};
+  //media query
+  @media only screen and (max-width: 980px) {
+    left: 0;
+    margin-left: 16vw;
+    justify-content: space-between;
+    margin-top: 0;
+    width: 75vw;
+  }
 `;
 
 export const LeftTopbarContent = styled.div`
@@ -33,11 +41,19 @@ export const CurrentPage = styled.h3`
   font-size: 28px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 18px;
+  }
 `;
 
 export const WelcomeMsg = styled.span`
   margin-top: 5px;
   font-family: "Poppins", sans-serif;
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 12px;
+  }
 `;
 
 export const UserAvatar = styled.img`
@@ -51,5 +67,11 @@ export const UserAvatar = styled.img`
   }
   &:active {
     transform: scale(0.95);
+  }
+  //media query
+  @media only screen and (max-width: 980px) {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
   }
 `;

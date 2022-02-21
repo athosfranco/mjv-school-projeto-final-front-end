@@ -11,6 +11,10 @@ export const Table = styled.table`
 
 export const TableRow = styled.tr`
   cursor: default;
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 12px;
+  }
 `;
 
 export const TableRowValues = styled.tr`
@@ -22,10 +26,19 @@ export const TableRowValues = styled.tr`
 
 export const TableHead = styled.th`
   text-align: left;
+  @media only screen and (max-width: 980px) {
+    text-align: center;
+    padding: 0 10px;
+  }
 `;
 
 export const TableCell = styled.td`
   text-align: left;
   padding: 30px 0;
   border-bottom: 1px solid ${({ theme }) => theme.borderCases};
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 12px;
+    text-align: center;
+  }
 `;

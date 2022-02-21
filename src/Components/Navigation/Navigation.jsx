@@ -84,7 +84,7 @@ const data = [
 
 const navigateHandler = (navigateFn, path) => navigateFn(path, { replace: true });
 
-const Navigation = () => {
+const Navigation = ({ mobileSidebarExpanded }) => {
   let navigate = useNavigate();
   return (
     <NavigationContainer>
@@ -92,7 +92,7 @@ const Navigation = () => {
         return (
           <NavItem onClick={() => navigateHandler(navigate, nav.path)} key={nav.id}>
             <NavIcon>{nav.icon}</NavIcon>
-            <Text>{nav.title}</Text>
+            <Text mobileSidebarExpanded={mobileSidebarExpanded}>{nav.title}</Text>
           </NavItem>
         );
       })}
