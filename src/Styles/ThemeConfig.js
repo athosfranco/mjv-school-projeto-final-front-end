@@ -6,11 +6,14 @@ export const lightTheme = {
   success: "#00A389",
   danger: "#FF5B5B",
   warning: "#FFBB54",
+  disabled: "#d1d1d1",
   info: "#58CDFF",
   primary: "#A91B1C",
   secondary: "#EA5F28",
   terciary: "#EF9A91",
   quatinery: "#F1E6B9",
+  hoverOnCases: "#eaeaea",
+  borderCases: "lightgray",
 };
 
 export const darkTheme = {
@@ -20,11 +23,13 @@ export const darkTheme = {
   background: "#17161E",
   success: "#00A389",
   danger: "#FF5B5B",
-  warning: "#FFBB54",
+  warning: "#e5a749",
   info: "#58CDFF",
-  disabled: (theme) => (theme === "light" ? "#d1d1d1" : "#353535"),
+  disabled: "#353535",
   primary: "#A91B1C",
   secondary: "#EA5F28",
   terciary: "#EF9A91",
   quatinery: "#F1E6B9",
+  hoverOnCases: "#24232C",
+  borderCases: "#24232C",
 };
