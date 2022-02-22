@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
+import ReactDOM from "react-dom";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Topbar from "../../Components/Topbar/Topbar";
+import ModalCtx from "../../Context/ModalContext";
+import Modal from "../../Components/Modal/Modal";
 import { PageContainer, Main } from "./Dashboard.styles";
 import { useLocation } from "react-router-dom";
 import { REQ_BODY } from "../../data";
@@ -71,8 +74,23 @@ const Dashboard = () => {
 
   const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
 
+  const { modalState } = useContext(ModalCtx);
+
   return (
     <PageContainer>
+      {modalState?.display &&
+        ReactDOM.createPortal(
+          <Modal
+            title={modalState.title}
+            text={modalState.text}
+            modalWithBtn={modalState.modalWithBtn}
+            confirmBtnTxt={modalState.confirmBtnTxt}
+            cancelBtnTxt={modalState.cancelBtnTxt}
+            onCancel={modalState.cancelHandler}
+            onConfirm={modalState.confirmHandler}
+          />,
+          document.getElementById("overlay-root")
+        )}
       <Sidebar onSidebarToggle={sidebarToggleHandler} mobileSidebarExpanded={mobileSidebarExpanded} />
       <Topbar />
       <Main>

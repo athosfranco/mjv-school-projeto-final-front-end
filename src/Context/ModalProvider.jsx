@@ -3,11 +3,9 @@ import ModalCtx from "./ModalContext";
 
 const modalReducer = (state, action) => {
   let newState;
-  alert("im getting here");
 
   switch (action.type) {
     case "SET_DISPLAY":
-      alert("im getting here!!!!!!!!!!1");
       newState = { ...state, display: action.value };
       break;
     case "SET_TITLE":
@@ -35,10 +33,12 @@ const ModalProvider = ({ children }) => {
   const [modalState, modalDispatch] = useReducer(modalReducer, {
     display: false,
     title: "Título",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, eaqueLAAAAAAAAAALALALA.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, eaque",
     modalWithBtn: false,
     confirmBtnTxt: "Confirmar",
     cancelBtnTxt: "Cancelar",
+    cancelHandler: null,
+    confirmHandler: null,
   });
 
   return <ModalCtx.Provider value={{ modalState, modalDispatch }}>{children}</ModalCtx.Provider>;

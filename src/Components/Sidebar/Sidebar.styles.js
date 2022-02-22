@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin: 10px;
   position: fixed;
   width: 20vw;
-  z-index: 999;
+  z-index: 997;
   //animation
   animation: slide-left 1000ms ease-out forwards;
   @keyframes slide-left {

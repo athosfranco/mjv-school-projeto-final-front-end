@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import ModalCtx from "../../Context/ModalContext";
+import LoginCtx from "../../Context/LoginContext";
 import {
   CurrentPage,
   LeftTopbarContent,
@@ -9,17 +11,21 @@ import {
 } from "./Topbar.styles";
 import avatar from "../../Assets/avatar.png";
 import { useLocation } from "react-router-dom";
-import ModalCtx from "../../Context/ModalContext";
 
 const Topbar = () => {
+  //valor scrollado
   const [offset, setOffset] = useState(0);
 
+  //titulo da pag atual aparecendo no topbar
   const [currPageTitle, setCurrPageTitle] = useState("Início");
 
+  //url atual
   const { pathname } = useLocation();
 
-  const modalDispatch = useContext(ModalCtx);
+  //manipulaçao do modal
+  const { modalState, modalDispatch } = useContext(ModalCtx);
 
+  //useEffect para atualizar o nome da pagina atual no topbar
   useEffect(() => {
     let basePathname = "/dashboard/";
     switch (pathname) {
@@ -58,6 +64,7 @@ const Topbar = () => {
     }
   }, [pathname]);
 
+  //scroll listener
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
     // clean up code
@@ -68,8 +75,21 @@ const Topbar = () => {
 
   const logoutHandler = () => {
     modalDispatch({
-      type: "SET_DISPLAY",
-      value: true,
+      type: "CONFIG_MODAL",
+      value: {
+        display: true,
+        title: "Logout",
+        text: "Você está conectado como ADMIN. Deseja desconectar?",
+        modalWithBtn: true,
+        confirmBtnTxt: "Desconectar",
+        cancelBtnTxt: "Cancelar",
+        cancelHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+        confirmHandler: () => {
+          alert("laaaalaalala");
+        },
+      },
     });
   };
 

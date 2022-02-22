@@ -7,6 +7,8 @@ const ModalCtx = createContext({
   modalWithBtn: false,
   confirmBtnTxt: "Confirmar",
   cancelBtnTxt: "Cancelar",
+  cancelHandler: null,
+  confirmHandler: null,
 });
 
 export default ModalCtx;
