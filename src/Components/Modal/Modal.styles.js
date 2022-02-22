@@ -11,16 +11,35 @@ export const ModalContainer = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 500px;
   height: 300px;
   margin-top: -150px;
-  margin-left: -200px;
+  margin-left: -250px;
   z-index: 1000;
 
   //styling
   background-color: ${({ theme }) => theme.body};
   border-radius: 18px;
   padding: 15px;
+
+  //animation
+  animation: slide-down 500ms ease-out forwards;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-4rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  //media query
+  @media only screen and (max-width: 980px) {
+    width: 350px;
+    margin-left: -175px;
+  }
 `;
 
 export const Overlay = styled.div`

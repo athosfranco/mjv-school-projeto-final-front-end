@@ -25,6 +25,9 @@ const Topbar = () => {
   //manipulaçao do modal
   const { modalState, modalDispatch } = useContext(ModalCtx);
 
+  //login context
+  const { state, dispatch } = useContext(LoginCtx);
+
   //useEffect para atualizar o nome da pagina atual no topbar
   useEffect(() => {
     let basePathname = "/dashboard/";
@@ -79,7 +82,7 @@ const Topbar = () => {
       value: {
         display: true,
         title: "Logout",
-        text: "Você está conectado como ADMIN. Deseja desconectar?",
+        text: `Você está conectado como: ${state.userLoggedIn}. Deseja desconectar?`,
         modalWithBtn: true,
         confirmBtnTxt: "Desconectar",
         cancelBtnTxt: "Cancelar",
@@ -97,7 +100,7 @@ const Topbar = () => {
     <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
         <CurrentPage>{currPageTitle}</CurrentPage>
-        <WelcomeMsg>Olá, Maria</WelcomeMsg>
+        <WelcomeMsg onClick={logoutHandler}>Olá, {state.userLoggedIn}</WelcomeMsg>
       </LeftTopbarContent>
       <RightTopbarContent onClick={logoutHandler}>
         <UserAvatar src={avatar} />

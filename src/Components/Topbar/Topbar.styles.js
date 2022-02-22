@@ -51,9 +51,14 @@ export const CurrentPage = styled.h3`
 export const WelcomeMsg = styled.span`
   margin-top: 5px;
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
   //media query
   @media only screen and (max-width: 980px) {
     font-size: 12px;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+    text-decoration: underline;
   }
 `;
 
