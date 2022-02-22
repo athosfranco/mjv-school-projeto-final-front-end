@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   CurrentPage,
   LeftTopbarContent,
@@ -9,6 +9,7 @@ import {
 } from "./Topbar.styles";
 import avatar from "../../Assets/avatar.png";
 import { useLocation } from "react-router-dom";
+import ModalCtx from "../../Context/ModalContext";
 
 const Topbar = () => {
   const [offset, setOffset] = useState(0);
@@ -16,6 +17,8 @@ const Topbar = () => {
   const [currPageTitle, setCurrPageTitle] = useState("Início");
 
   const { pathname } = useLocation();
+
+  const modalDispatch = useContext(ModalCtx);
 
   useEffect(() => {
     let basePathname = "/dashboard/";
@@ -63,13 +66,20 @@ const Topbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const logoutHandler = () => {
+    modalDispatch({
+      type: "SET_DISPLAY",
+      value: true,
+    });
+  };
+
   return (
     <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
         <CurrentPage>{currPageTitle}</CurrentPage>
         <WelcomeMsg>Olá, Maria</WelcomeMsg>
       </LeftTopbarContent>
-      <RightTopbarContent>
+      <RightTopbarContent onClick={logoutHandler}>
         <UserAvatar src={avatar} />
       </RightTopbarContent>
     </TopbarContainer>
