@@ -52,3 +52,7 @@ export const Value = styled.span`
 `;
 
 export const Img = styled.img``;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+`;
