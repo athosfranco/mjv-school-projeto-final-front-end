@@ -60,6 +60,7 @@ export const ModalHeader = styled.div`
 export const ModalTitle = styled.span`
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  cursor: default;
 `;
 
 export const CloseModalBtn = styled(AiOutlineClose)`
@@ -79,6 +80,8 @@ export const ModalBody = styled.div`
 
 export const Text = styled.p`
   text-align: center;
+  cursor: default;
+  margin: 0 40px;
 `;
 
 export const ButtonWrapper = styled.div`

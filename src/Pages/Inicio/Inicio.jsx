@@ -36,7 +36,17 @@ const Inicio = () => {
         <Divider />
         <SectionWrapper>
           {cardData.map((card) => {
-            return <InfoCard title={card.title} value={card.value} img={card.img} key={card.id} />;
+            return (
+              <InfoCard
+                title={card.title}
+                value={card.value}
+                img={card.img}
+                key={card.id}
+                onClick={() => {
+                  alert(card.title);
+                }}
+              />
+            );
           })}
         </SectionWrapper>
       </SectionContainer>

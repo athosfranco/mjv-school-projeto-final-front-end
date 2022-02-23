@@ -5,7 +5,7 @@ export const Btn = styled.button`
   border-radius: 10px;
   border: none;
   color: ${({ type }) => (type === "disabled" ? "darkgray" : "white")};
-  width: 100%;
+  width: ${({ width }) => (width ? width : "100%")};
   padding: 15px;
   background-color: ${({ type, theme }) => {
     if (type === "success") {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Btn } from "./Button.styles";
 
-const Button = ({ children, type, onClick }) => {
+const Button = ({ children, type, onClick, width }) => {
   return (
     <Btn
       onClick={(e) => {
@@ -9,6 +9,7 @@ const Button = ({ children, type, onClick }) => {
         if (type !== "disabled") onClick();
       }}
       type={type}
+      width={width}
     >
       {children}
     </Btn>

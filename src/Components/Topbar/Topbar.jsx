@@ -90,7 +90,8 @@ const Topbar = () => {
           modalDispatch({ type: "SET_DISPLAY", value: false });
         },
         confirmHandler: () => {
-          alert("laaaalaalala");
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+          dispatch({ type: "LOGOUT" });
         },
       },
     });

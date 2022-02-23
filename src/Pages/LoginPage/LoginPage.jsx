@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import LoginCtx from "../../Context/LoginContext";
 import LoginModal from "../../Components/LoginModal/LoginModal";
 import { getCurrentYear } from "../../GeneralFunctions";
@@ -12,6 +12,11 @@ const LoginPage = () => {
   const loginHandler = (user, pwd) => {
     dispatch({ type: "LOGIN", value: { userInput: user, pwdInput: pwd } });
   };
+
+  //verifica se usuário está logado
+  useEffect(() => {
+    dispatch({ type: "CHECK_SESSION" });
+  }, []);
 
   return (
     <PageContainer>

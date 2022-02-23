@@ -24,10 +24,10 @@ const Modal = ({ text, title, modalWithBtn, confirmBtnTxt, cancelBtnTxt, onCance
         </ModalBody>
         {modalWithBtn && (
           <ButtonWrapper>
-            <Button type="danger" onClick={onCancel}>
+            <Button type="danger" onClick={onCancel} width={"200px"}>
               {cancelBtnTxt ? cancelBtnTxt : "Cancelar"}
             </Button>
-            <Button type="success" onClick={onConfirm}>
+            <Button type="success" onClick={onConfirm} width={"200px"}>
               {confirmBtnTxt ? confirmBtnTxt : "Confirmar"}
             </Button>
           </ButtonWrapper>

@@ -14,9 +14,19 @@ const loginReducer = (state, action) => {
     case "LOGIN":
       if (action.value.userInput === "admin" && action.value.pwdInput === "0000") {
         newState = { userLoggedIn: "admin", accessLevel: 0, loginAttemptSuccess: "success" };
+        localStorage.setItem("JUNTA_SESSION", JSON.stringify(newState));
       } else {
         newState = { ...state, loginAttemptSuccess: "failed" };
       }
+      break;
+    case "LOGOUT":
+      localStorage.removeItem("JUNTA_SESSION");
+      return loginInitialState;
+
+    case "CHECK_SESSION":
+      if (localStorage.getItem("JUNTA_SESSION")) {
+        newState = JSON.parse(localStorage.getItem("JUNTA_SESSION"));
+      } else return state;
       break;
     default:
       throw new Error();
