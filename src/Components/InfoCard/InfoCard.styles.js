@@ -72,7 +72,7 @@ export const ButtonWrapper = styled.div`
 
 export const CardButtonExcel = styled.button`
   width: 150px;
-  background-color: #f7f7f7;
+  background-color: ${({ theme }) => theme.cardButton};
   border-radius: 10px;
   border: none;
   outline: none;
@@ -89,7 +89,7 @@ export const CardButtonExcel = styled.button`
 `;
 export const CardButtonRelatorios = styled.button`
   width: 150px;
-  background-color: #f7f7f7;
+  background-color: ${({ theme }) => theme.cardButton};
   color: #2999f2;
   border-radius: 10px;
   border: none;

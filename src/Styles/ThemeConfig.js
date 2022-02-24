@@ -14,6 +14,7 @@ export const lightTheme = {
   quatinery: "#F1E6B9",
   hoverOnCases: "#eaeaea",
   borderCases: "lightgray",
+  cardButton: "#F7F7F7",
 };
 
 export const darkTheme = {
@@ -32,4 +33,5 @@ export const darkTheme = {
   quatinery: "#F1E6B9",
   hoverOnCases: "#24232C",
   borderCases: "#24232C",
+  cardButton: "#212028",
 };
