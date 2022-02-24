@@ -33,7 +33,7 @@ const Modal = ({ text, title, modalWithBtn, confirmBtnTxt, cancelBtnTxt, onCance
           </ButtonWrapper>
         )}
       </ModalContainer>
-      <Overlay />
+      <Overlay onClick={onCancel} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Btn } from "./Button.styles";
 
-const Button = ({ children, type, onClick, width }) => {
+const Button = ({ children, type, onClick, width, mright }) => {
   return (
     <Btn
       onClick={(e) => {
@@ -10,6 +10,7 @@ const Button = ({ children, type, onClick, width }) => {
       }}
       type={type}
       width={width}
+      mright={mright}
     >
       {children}
     </Btn>
