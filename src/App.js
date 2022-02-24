@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./Styles/ThemeConfig";
 import { GlobalStyles } from "./Styles/GlobalStyles";
@@ -12,6 +12,13 @@ function App() {
   const [theme, setTheme] = useState("light");
 
   const handleToggleTheme = () => (theme === "light" ? setTheme("dark") : setTheme("light"));
+
+  useEffect(() => {
+    const userConfig = JSON.parse(localStorage.getItem("USER_CONFIG"));
+    if (userConfig?.darkMode) {
+      handleToggleTheme();
+    }
+  }, []);
 
   return (
     <>

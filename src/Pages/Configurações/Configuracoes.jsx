@@ -6,6 +6,16 @@ import { ThemeCtx } from "../../App";
 
 const Configuracoes = () => {
   const { handleToggleTheme, theme } = useContext(ThemeCtx);
+  const themeConfigHandler = () => {
+    if (localStorage.getItem("USER_CONFIG")) {
+      localStorage.removeItem("USER_CONFIG");
+    } else {
+      localStorage.setItem("USER_CONFIG", JSON.stringify({ darkMode: true }));
+    }
+
+    handleToggleTheme();
+  };
+
   return (
     <PageContainer>
       <SectionContainer>
@@ -14,7 +24,7 @@ const Configuracoes = () => {
         <SectionWrapper>
           <OptionContainer>
             <OptionTitle>Modo Escuro</OptionTitle>
-            <Switch onChange={handleToggleTheme} checked={theme !== "light"} />
+            <Switch onChange={themeConfigHandler} checked={theme !== "light"} />
             <OptionDesc>
               Modifica a paleta de cores para uma com tons escuros, diminuindo a luminosidade da tela.
             </OptionDesc>
