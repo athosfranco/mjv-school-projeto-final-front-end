@@ -8,7 +8,7 @@ import filaIcon from "../../Assets/fila_icon.png";
 import aprovadosIcon from "../../Assets/aprovados_icon.png";
 import InfoCard from "../../Components/InfoCard/InfoCard";
 
-const cards = {
+const cardsAtendimentos = {
   cirurgia: [
     {
       id: 1,
@@ -132,7 +132,7 @@ const Atendimentos = () => {
         <SectionTitle>Cirurgia</SectionTitle>
         <Divider />
         <SectionWrapper>
-          {cards.cirurgia.map((card) => {
+          {cardsAtendimentos.cirurgia.map((card) => {
             return (
               <InfoCard
                 title={card.title}
@@ -152,7 +152,7 @@ const Atendimentos = () => {
         <Divider />
         <SectionWrapper>
           {" "}
-          {cards.exames.map((card) => {
+          {cardsAtendimentos.exames.map((card) => {
             return (
               <InfoCard
                 title={card.title}
@@ -171,7 +171,7 @@ const Atendimentos = () => {
         <SectionTitle>Conta Médica</SectionTitle>
         <Divider />
         <SectionWrapper>
-          {cards.contaMedica.map((card) => {
+          {cardsAtendimentos.contaMedica.map((card) => {
             return (
               <InfoCard
                 title={card.title}
