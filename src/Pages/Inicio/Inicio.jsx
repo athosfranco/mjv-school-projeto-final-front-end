@@ -22,7 +22,7 @@ const cardData = [
   },
   {
     id: 3,
-    title: "Contas Médicas",
+    title: "ContasMédicas",
     value: 50,
     img: contaImg,
   },
