@@ -15,7 +15,7 @@ export const ModalContainer = styled.div`
   height: 300px;
   margin-top: -150px;
   margin-left: -250px;
-  z-index: 1000;
+  z-index: 1999;
 
   //styling
   background-color: ${({ theme }) => theme.body};
@@ -49,7 +49,7 @@ export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
+  z-index: 1500;
 `;
 
 export const ModalHeader = styled.div`

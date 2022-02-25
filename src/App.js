@@ -28,7 +28,6 @@ function App() {
         <ThemeCtx.Provider value={{ handleToggleTheme, theme }}>
           <LoginProvider>
             <ModalProvider>
-              <CasoDeAnalise />
               <Rotas />
             </ModalProvider>
           </LoginProvider>

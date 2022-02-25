@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../../UI/Button/Button";
 import {
   BeneficiarioRow,
@@ -25,10 +25,13 @@ import TabDescAvaliador from "./TabDescAvaliador";
 import TabDescricaoCaso from "./TabDescricaoCaso";
 import TabDocAnexado from "./TabDocAnexado";
 import TabValorCampanha from "./TabValorCampanha";
+import ModalCtx from "../../Context/ModalContext";
 
-document.body.style.overflow = "hidden";
+// document.body.style.overflow = "hidden";
 
 const CasoDeAnalise = () => {
+  const { modalDispatch } = useContext(ModalCtx);
+
   const [activeTab, setActiveTab] = useState(1);
 
   const currentTabHandler = () => {
@@ -41,6 +44,64 @@ const CasoDeAnalise = () => {
     } else if (activeTab === 4) {
       return <TabValorCampanha />;
     }
+  };
+
+  const rejectHandler = () => {
+    modalDispatch({
+      type: "CONFIG_MODAL",
+      value: {
+        display: true,
+        title: "Rejeitar Caso",
+        text: `Confirmar REJEIÇÃO deste caso?`,
+        modalWithBtn: true,
+        confirmBtnTxt: "Confirmar",
+        cancelBtnTxt: "Cancelar",
+        cancelHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+        confirmHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+      },
+    });
+  };
+  const analysisHandler = () => {
+    modalDispatch({
+      type: "CONFIG_MODAL",
+      value: {
+        display: true,
+        title: "Rejeitar Caso",
+        text: `Marcar este caso como EM ANÁLISE?`,
+        modalWithBtn: true,
+        confirmBtnTxt: "Confirmar",
+        cancelBtnTxt: "Cancelar",
+        cancelHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+        confirmHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+      },
+    });
+  };
+  const approvedHandler = () => {
+    modalDispatch({
+      type: "CONFIG_MODAL",
+      value: {
+        display: true,
+        title: "Rejeitar Caso",
+        text: `Deseja confirmar a APROVAÇÃO deste caso?`,
+        modalWithBtn: true,
+        confirmBtnTxt: "Confirmar",
+        cancelBtnTxt: "Cancelar",
+        cancelHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+        confirmHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+      },
+    });
   };
 
   return (
@@ -56,13 +117,15 @@ const CasoDeAnalise = () => {
             <FieldValue>000123456</FieldValue>
           </InfoWrapper>
           <BtnWrapper>
-            <Button type="danger" mright="10px">
+            <Button type="danger" mright="10px" onClick={rejectHandler}>
               Recusar
             </Button>
-            <Button type="warning" mright="10px">
+            <Button type="warning" mright="10px" onClick={analysisHandler}>
               Analisar
             </Button>
-            <Button type="success">Aprovar</Button>
+            <Button type="success" onClick={approvedHandler}>
+              Aprovar
+            </Button>
           </BtnWrapper>
         </CaseControl>
 
