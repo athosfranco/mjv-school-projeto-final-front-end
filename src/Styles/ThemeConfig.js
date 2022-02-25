@@ -31,7 +31,7 @@ export const darkTheme = {
   secondary: "#EA5F28",
   terciary: "#EF9A91",
   quatinery: "#F1E6B9",
-  hoverOnCases: "#24232C",
+  hoverOnCases: "#2d2c33",
   borderCases: "#24232C",
   cardButton: "#212028",
 };

@@ -15,6 +15,18 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.body};
   border-radius: 18px;
   padding: 15px 25px;
+  //animation
+  animation: slide-down 500ms ease-out forwards;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-4rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const Overlay = styled.div`
@@ -84,6 +96,18 @@ export const BtnWrapper = styled.div`
 
 export const CaseSection = styled.div`
   margin: 10px 0;
+  //animation
+  animation: slide-down 350ms ease-out forwards;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const CaseSectionTitle = styled.span`
@@ -142,6 +166,18 @@ export const TabCampanhaContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  //animation
+  animation: slide-down 350ms ease-out forwards;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const ValorArrecadado = styled.span`
@@ -186,3 +222,42 @@ export const Meta = styled.span`
 `;
 
 ///TabDocAnexado
+export const TabDocAnexadoContainer = styled.div`
+  //animation
+  animation: slide-down 350ms ease-out forwards;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+export const DocTable = styled.table`
+  width: 100%;
+`;
+
+export const DocTableHead = styled.thead`
+  text-align: center;
+`;
+
+export const DocTableBody = styled.tbody`
+  text-align: center;
+`;
+
+export const DocTableRow = styled.tr``;
+
+export const DocTableRowBody = styled.tr`
+  cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.hoverOnCases};
+  }
+  td {
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+  }
+`;
