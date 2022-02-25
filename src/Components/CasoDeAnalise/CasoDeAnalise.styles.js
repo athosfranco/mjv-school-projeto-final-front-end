@@ -68,7 +68,7 @@ export const SolicitacaoSpan = styled.span`
   font-weight: bold;
 `;
 
-export const InfoValue = styled.span`
+export const FieldValue = styled.span`
   background-color: #4642551a;
   border-radius: 10px;
   border: 1.5px solid rgba(169, 27, 28, 0.3);
@@ -93,13 +93,32 @@ export const CaseSectionTitle = styled.span`
 export const CaseSectionContent = styled.div`
   margin-top: 10px;
   border: 1px solid rgba(169, 27, 28, 0.3);
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: ${({ dir }) => (dir === "row" ? "row" : "column")};
 `;
 
-export const BeneficiarioCol = styled.div`
+export const BeneficiarioRow = styled.div`
   display: flex;
-  flex-direction: column;
+  margin: 20px 0;
+`;
+
+export const FieldWrapper = styled.div``;
+
+export const FieldTitle = styled.span`
+  margin: 0 10px;
+`;
+
+export const TabController = styled.div`
+  margin-top: 30px;
+  display: flex;
+`;
+
+export const Tab = styled.span`
+  cursor: pointer;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  ${({ active }) => active && "border-bottom: 2px solid darkgray"};
 `;
