@@ -91,12 +91,21 @@ export const CaseSectionTitle = styled.span`
 `;
 
 export const CaseSectionContent = styled.div`
+  cursor: default;
   margin-top: 10px;
   border: 1px solid rgba(169, 27, 28, 0.3);
   padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: ${({ dir }) => (dir === "row" ? "row" : "column")};
+  overflow-x: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+  p {
+    line-height: 1.8;
+    margin-right: 30px;
+    margin-left: 15px;
+  }
 `;
 
 export const BeneficiarioRow = styled.div`
@@ -121,4 +130,9 @@ export const Tab = styled.span`
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
   ${({ active }) => active && "border-bottom: 2px solid darkgray"};
+`;
+
+export const TabContent = styled.div`
+  margin-top: 20px;
+  height: 100%;
 `;

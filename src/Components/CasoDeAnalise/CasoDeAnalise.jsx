@@ -19,10 +19,30 @@ import {
   Title,
   TabController,
   Tab,
+  TabContent,
 } from "./CasoDeAnalise.styles";
+import TabDescAvaliador from "./TabDescAvaliador";
+import TabDescricaoCaso from "./TabDescricaoCaso";
+import TabDocAnexado from "./TabDocAnexado";
+import TabValorCampanha from "./TabValorCampanha";
+
+document.body.style.overflow = "hidden";
 
 const CasoDeAnalise = () => {
   const [activeTab, setActiveTab] = useState(1);
+
+  const currentTabHandler = () => {
+    if (activeTab === 1) {
+      return <TabDescricaoCaso />;
+    } else if (activeTab === 2) {
+      return <TabDocAnexado />;
+    } else if (activeTab === 3) {
+      return <TabDescAvaliador />;
+    } else if (activeTab === 4) {
+      return <TabValorCampanha />;
+    }
+  };
+
   return (
     <>
       <Container>
@@ -82,6 +102,7 @@ const CasoDeAnalise = () => {
             Valor da Campanha
           </Tab>
         </TabController>
+        <TabContent>{currentTabHandler()}</TabContent>
       </Container>
       <Overlay />
     </>
