@@ -14,7 +14,7 @@ export const Container = styled.div`
   //styling
   background-color: ${({ theme }) => theme.body};
   border-radius: 18px;
-  padding: 15px;
+  padding: 15px 25px;
 `;
 
 export const Overlay = styled.div`
@@ -136,3 +136,53 @@ export const TabContent = styled.div`
   margin-top: 20px;
   height: 100%;
 `;
+
+///TabCampanhaContainer
+export const TabCampanhaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+`;
+
+export const ValorArrecadado = styled.span`
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+`;
+
+export const CampanhaDesc = styled.p`
+  font-size: 14px;
+  color: darkgray;
+  margin-right: 30px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+`;
+
+export const ProgressoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProgressBar = styled.div`
+  width: 100%;
+  height: 5px;
+  background-color: orange;
+`;
+
+export const ValuesContainer = styled.div`
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ArrecadadoSmall = styled.span`
+  font-size: 16px;
+  font-weight: bold;
+`;
+export const Meta = styled.span`
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+///TabDocAnexado
