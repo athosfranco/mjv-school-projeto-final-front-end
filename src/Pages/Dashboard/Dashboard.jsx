@@ -48,7 +48,7 @@ const Dashboard = () => {
           password: "e8daa6779d7f418443ade747ac9ed4552efhjnx",
         },
         headers: {
-          Authorization: "Basic QWNjZXNzTGVhcFN0eWxlREVWQVBJOk1qQk1SV0Z3VTNSNVRHVlNiMk5yZEZOMGRXUnBiekl4",
+          // Authorization: "Basic QWNjZXNzTGVhcFN0eWxlREVWQVBJOk1qQk1SV0Z3VTNSNVRHVlNiMk5yZEZOMGRXUnBiekl4",
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
@@ -91,6 +91,7 @@ const Dashboard = () => {
           />,
           document.getElementById("overlay-root")
         )}
+
       <Sidebar onSidebarToggle={sidebarToggleHandler} mobileSidebarExpanded={mobileSidebarExpanded} />
       <Topbar />
       <Main>

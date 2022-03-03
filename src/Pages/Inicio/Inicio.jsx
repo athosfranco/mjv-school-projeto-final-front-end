@@ -4,6 +4,8 @@ import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider 
 import cirurgiaImg from "../../Assets/cirurgias_icon.png";
 import exameImg from "../../Assets/exames_icon.png";
 import contaImg from "../../Assets/contas_icon.png";
+import increase from "../../Assets/increase.png";
+import decrease from "../../Assets/decrease.png";
 import Casos from "./Casos";
 import { CASOS_DUMMY_DATA } from "../../data";
 
@@ -22,9 +24,30 @@ const cardData = [
   },
   {
     id: 3,
-    title: "ContasMédicas",
+    title: "Contas Médicas",
     value: 50,
     img: contaImg,
+  },
+];
+
+const statisticsCardData = [
+  {
+    id: 1,
+    title: "Doações",
+    value: 20.0,
+    img: increase,
+  },
+  {
+    id: 2,
+    title: "Pacientes",
+    value: -300,
+    img: decrease,
+  },
+  {
+    id: 3,
+    title: "Novos Usuários",
+    value: 4.75,
+    img: increase,
   },
 ];
 
@@ -51,9 +74,24 @@ const Inicio = () => {
         </SectionWrapper>
       </SectionContainer>
       <SectionContainer>
-        <SectionTitle>Casos para avaliar</SectionTitle>
+        <SectionTitle>Estatísticas</SectionTitle>
         <Divider />
-        <Casos casos={CASOS_DUMMY_DATA} />
+        <SectionWrapper>
+          {statisticsCardData.map((card) => {
+            return (
+              <InfoCard
+                title={card.title}
+                value={card.value}
+                img={card.img}
+                key={card.id}
+                onClick={() => {
+                  alert(card.title);
+                }}
+              />
+            );
+          })}
+        </SectionWrapper>
+        {/* <Casos casos={CASOS_DUMMY_DATA} /> */}
       </SectionContainer>
     </PageContainer>
   );

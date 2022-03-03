@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { CasesContainer, Table, TableCell, TableHead, TableRow, TableRowValues } from "./Inicio.styles";
 import axios from "axios";
 import { getFormattedDate } from "../../GeneralFunctions";
 import StatusCaso from "../../Components/StatusCaso/StatusCaso";
+import CasoDeAnalise from "../../Components/CasoDeAnalise/CasoDeAnalise";
 
 const Casos = ({ casos }) => {
   const fetchUserInfo = (usuarioId) => {
@@ -26,8 +27,12 @@ const Casos = ({ casos }) => {
   };
 
   console.log(casos);
+
+  const [telaDeAnalise, setTelaDeAnalise] = useState(false);
+
   return (
     <CasesContainer>
+      {telaDeAnalise && <CasoDeAnalise />}
       <Table>
         <thead>
           <TableRow>
@@ -42,7 +47,7 @@ const Casos = ({ casos }) => {
         <tbody>
           {casos.map((caso) => {
             return (
-              <TableRowValues key={caso.CAS_Id}>
+              <TableRowValues key={caso.CAS_Id} onClick={() => setTelaDeAnalise(!telaDeAnalise)}>
                 <TableCell>{getFormattedDate(caso.CAS_DataCriacao, "dd/mm/yy")}</TableCell>
                 <TableCell>{getFormattedDate(caso.CAS_DataCriacao, "hr")}</TableCell>
                 <TableCell>{fetchUserInfo(caso.Paciente.PAC_UsuarioId)}</TableCell>
