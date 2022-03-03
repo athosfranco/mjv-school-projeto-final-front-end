@@ -35,18 +35,21 @@ const statisticsCardData = [
     id: 1,
     title: "Doações",
     value: 20.0,
+    percentageChange: 2.5,
     img: increase,
   },
   {
     id: 2,
     title: "Pacientes",
-    value: -300,
+    value: 300,
+    percentageChange: -4.4,
     img: decrease,
   },
   {
     id: 3,
     title: "Novos Usuários",
-    value: 4.75,
+    value: 37,
+    percentageChange: 2.5,
     img: increase,
   },
 ];
@@ -82,6 +85,7 @@ const Inicio = () => {
               <InfoCard
                 title={card.title}
                 value={card.value}
+                percentageChange={card.percentageChange}
                 img={card.img}
                 key={card.id}
                 onClick={() => {

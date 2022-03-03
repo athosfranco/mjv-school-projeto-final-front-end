@@ -101,7 +101,7 @@ const Topbar = () => {
     <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
         <CurrentPage>{currPageTitle}</CurrentPage>
-        <WelcomeMsg onClick={logoutHandler}>Olá, {state.userLoggedIn}</WelcomeMsg>
+        <WelcomeMsg onClick={logoutHandler}>Olá, {state.userLoggedIn}. Bem vindo ao Junta.</WelcomeMsg>
       </LeftTopbarContent>
       <RightTopbarContent onClick={logoutHandler}>
         <UserAvatar src={avatar} />

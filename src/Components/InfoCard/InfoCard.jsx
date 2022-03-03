@@ -13,13 +13,14 @@ import {
   CardButtonExcel,
   CardButtonRelatorios,
   BtnIconRelatorios,
+  ValueSmall,
 } from "./InfoCard.styles";
 
 const onCancel = () => {};
 
 const onConfirm = () => {};
 
-const InfoCard = ({ title, value, img, onClick, withBtns }) => {
+const InfoCard = ({ title, value, img, onClick, withBtns, percentageChange }) => {
   return (
     <CardContainer onClick={onClick}>
       <FlexRow>
@@ -27,6 +28,12 @@ const InfoCard = ({ title, value, img, onClick, withBtns }) => {
         <Desc>
           <Title>{title}</Title>
           <Value>{value}</Value>
+          {percentageChange && (
+            <ValueSmall value={percentageChange}>
+              {percentageChange > 0 && "+"}
+              {percentageChange}%
+            </ValueSmall>
+          )}
         </Desc>
         <Img src={img} />
       </FlexRow>

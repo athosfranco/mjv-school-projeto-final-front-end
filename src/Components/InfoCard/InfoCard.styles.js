@@ -61,6 +61,17 @@ export const Value = styled.span`
     font-size: 44px;
   }
 `;
+export const ValueSmall = styled.span`
+  font-weight: 600;
+  font-size: 25px;
+  //font
+  font-family: "Poppins", sans-serif;
+  color: ${({ value }) => (value > 0 ? "green" : "tomato")};
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 14px;
+  }
+`;
 
 export const Img = styled.img``;
 
