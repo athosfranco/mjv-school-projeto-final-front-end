@@ -13,6 +13,7 @@ import PedidoDestaque from "../../Components/PedidoDestaque/PedidoDestaque";
 import img from "../../Assets/avatar.png";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { ArrowLeft, ArrowRight } from "./Inicio.styles";
+import CampanhasChart from "../../Components/CampanhasChart/CampanhasChart";
 
 const cardData = [
   {
@@ -176,6 +177,7 @@ const Inicio = () => {
             })}
           </Carousel>
         </SectionWrapper>
+        <CampanhasChart />
       </SectionContainer>
     </PageContainer>
   );
