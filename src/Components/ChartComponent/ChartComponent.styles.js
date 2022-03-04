@@ -16,7 +16,7 @@ export const ChartComponentContainer = styled.div`
   @media only screen and (max-width: 980px) {
     width: 100%;
     margin: 5px;
-    height: 320px;
+    height: 300px;
   }
 `;
 
@@ -30,12 +30,18 @@ export const Title = styled.span`
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   cursor: default;
+  @media only screen and (max-width: 980px) {
+    font-size: 18px;
+  }
 `;
 
 export const VerTodos = styled.span`
   color: ${({ theme }) => theme.primary};
   font-size: 14px;
   cursor: pointer;
+  @media only screen and (max-width: 980px) {
+    font-size: 12px;
+  }
 `;
 
 export const Value = styled.span`
@@ -44,6 +50,9 @@ export const Value = styled.span`
   color: #00a389;
   font-size: 42px;
   cursor: default;
+  @media only screen and (max-width: 980px) {
+    font-size: 32px;
+  }
 `;
 
 export const ChartContainer = styled.div``;
