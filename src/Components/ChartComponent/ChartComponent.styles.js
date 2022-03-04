@@ -12,6 +12,12 @@ export const ChartComponentContainer = styled.div`
   margin: 10px;
   width: 31%;
   height: 400px;
+  //media query
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+    margin: 5px;
+    height: 320px;
+  }
 `;
 
 export const ComponentHeader = styled.div`
@@ -23,6 +29,7 @@ export const ComponentHeader = styled.div`
 export const Title = styled.span`
   font-family: "Poppins", sans-serif;
   font-size: 24px;
+  cursor: default;
 `;
 
 export const VerTodos = styled.span`
@@ -36,6 +43,7 @@ export const Value = styled.span`
   font-weight: 400;
   color: #00a389;
   font-size: 42px;
+  cursor: default;
 `;
 
 export const ChartContainer = styled.div``;
