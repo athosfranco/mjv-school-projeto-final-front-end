@@ -97,6 +97,11 @@ const Inicio = () => {
         </SectionWrapper>
         {/* <Casos casos={CASOS_DUMMY_DATA} /> */}
       </SectionContainer>
+      <SectionContainer>
+        <SectionTitle>Pedidos em Destaque</SectionTitle>
+        <Divider />
+        <SectionWrapper></SectionWrapper>
+      </SectionContainer>
     </PageContainer>
   );
 };
