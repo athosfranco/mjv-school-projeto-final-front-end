@@ -8,6 +8,7 @@ import increase from "../../Assets/increase.png";
 import decrease from "../../Assets/decrease.png";
 import Casos from "./Casos";
 import { CASOS_DUMMY_DATA } from "../../data";
+import ChartComponent from "../../Components/ChartComponent/ChartComponent";
 
 const cardData = [
   {
@@ -94,6 +95,9 @@ const Inicio = () => {
               />
             );
           })}
+          <ChartComponent title={"Pacientes"} value={98} />
+          <ChartComponent title={"Cirurgias"} value={110} />
+          <ChartComponent title={"Lista de Espera"} value={155} />
         </SectionWrapper>
         {/* <Casos casos={CASOS_DUMMY_DATA} /> */}
       </SectionContainer>
