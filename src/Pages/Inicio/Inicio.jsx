@@ -9,6 +9,10 @@ import decrease from "../../Assets/decrease.png";
 import Casos from "./Casos";
 import { CASOS_DUMMY_DATA } from "../../data";
 import ChartComponent from "../../Components/ChartComponent/ChartComponent";
+import PedidoDestaque from "../../Components/PedidoDestaque/PedidoDestaque";
+import img from "../../Assets/avatar.png";
+import { Carousel } from "@trendyol-js/react-carousel";
+import { ArrowLeft, ArrowRight } from "./Inicio.styles";
 
 const cardData = [
   {
@@ -52,6 +56,65 @@ const statisticsCardData = [
     value: 37,
     percentageChange: 2.5,
     img: increase,
+  },
+];
+
+const pedidosDestaquesData = [
+  {
+    id: 1,
+    username: "Flavio",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 2,
+    username: "Athos",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 3,
+    username: "Mauricio",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 4,
+    username: "Ananda",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 5,
+    username: "Lucas",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 6,
+    username: "Diego",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 7,
+    username: "Mariana",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
+  },
+  {
+    id: 8,
+    username: "Higor",
+    data: "2 de novembro",
+    desc: "Architecto consequatur molestias repellat qui. Quia est asd doloremque veniam est rerum. Soluta",
+    img: img,
   },
 ];
 
@@ -104,7 +167,15 @@ const Inicio = () => {
       <SectionContainer>
         <SectionTitle>Pedidos em Destaque</SectionTitle>
         <Divider />
-        <SectionWrapper></SectionWrapper>
+        <SectionWrapper>
+          <Carousel show={3.5} slide={1} swiping={true} rightArrow={<ArrowRight />} leftArrow={<ArrowLeft />}>
+            {pedidosDestaquesData.map((pedido) => {
+              return (
+                <PedidoDestaque username={pedido.username} imgSrc={pedido.img} data={pedido.data} desc={pedido.desc} />
+              );
+            })}
+          </Carousel>
+        </SectionWrapper>
       </SectionContainer>
     </PageContainer>
   );

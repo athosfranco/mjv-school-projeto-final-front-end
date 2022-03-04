@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 export const CasesContainer = styled.div`
   display: flex;
@@ -44,5 +45,35 @@ export const TableCell = styled.td`
   @media only screen and (max-width: 980px) {
     font-size: 12px;
     text-align: center;
+  }
+`;
+
+export const ArrowLeft = styled(AiOutlineArrowLeft)`
+  font-size: 27px;
+
+  cursor: pointer;
+  &:hover {
+    transform: translateX(-5px);
+    color: ${({ theme }) => theme.primary};
+  }
+
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 15px;
+  }
+`;
+
+export const ArrowRight = styled(AiOutlineArrowRight)`
+  font-size: 27px;
+
+  cursor: pointer;
+  &:hover {
+    transform: translateX(5px);
+    color: ${({ theme }) => theme.primary};
+  }
+
+  //media query
+  @media only screen and (max-width: 980px) {
+    font-size: 15px;
   }
 `;
