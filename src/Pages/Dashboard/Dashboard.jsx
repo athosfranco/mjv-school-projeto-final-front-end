@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, createContext } from "react";
 import ReactDOM from "react-dom";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
@@ -9,7 +9,7 @@ import { PageContainer, Main } from "./Dashboard.styles";
 import { useLocation } from "react-router-dom";
 import { REQ_BODY } from "../../data";
 import axios from "axios";
-import DataCtx from "../../Context/DataContext";
+import LoadingOverlay from "../../Components/LoadingOverlay/LoadingOverlay";
 
 //////dados de conexão da api
 const URL_BASE = "http://44.202.73.116:50660/api/";
@@ -19,12 +19,10 @@ const CASOS_ENDPOINT = "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=
 const PACIENTES_ENDPOINT =
   "Paciente/GetAllPaciente?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=9999&order_by=PAC_Id";
 
-//
+//data context
+export const DataCtx = createContext();
 
 const Dashboard = () => {
-  //data context
-  const { Dispatch } = useContext(DataCtx);
-  console.log(Dispatch);
   //sidebar status
   const [mobileSidebarExpanded, setMobileSidebarExpanded] = useState(false);
 
@@ -85,27 +83,33 @@ const Dashboard = () => {
   const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
 
   return (
-    <PageContainer>
-      {modalState?.display &&
-        ReactDOM.createPortal(
-          <Modal
-            title={modalState.title}
-            text={modalState.text}
-            modalWithBtn={modalState.modalWithBtn}
-            confirmBtnTxt={modalState.confirmBtnTxt}
-            cancelBtnTxt={modalState.cancelBtnTxt}
-            onCancel={modalState.cancelHandler}
-            onConfirm={modalState.confirmHandler}
-          />,
-          document.getElementById("overlay-root")
-        )}
+    <DataCtx.Provider value={{ casos, pacientes }}>
+      {casos && pacientes ? (
+        <PageContainer>
+          {modalState?.display &&
+            ReactDOM.createPortal(
+              <Modal
+                title={modalState.title}
+                text={modalState.text}
+                modalWithBtn={modalState.modalWithBtn}
+                confirmBtnTxt={modalState.confirmBtnTxt}
+                cancelBtnTxt={modalState.cancelBtnTxt}
+                onCancel={modalState.cancelHandler}
+                onConfirm={modalState.confirmHandler}
+              />,
+              document.getElementById("overlay-root")
+            )}
 
-      <Sidebar onSidebarToggle={sidebarToggleHandler} mobileSidebarExpanded={mobileSidebarExpanded} />
-      <Topbar />
-      <Main>
-        <Outlet />
-      </Main>
-    </PageContainer>
+          <Sidebar onSidebarToggle={sidebarToggleHandler} mobileSidebarExpanded={mobileSidebarExpanded} />
+          <Topbar />
+          <Main>
+            <Outlet />
+          </Main>
+        </PageContainer>
+      ) : (
+        <LoadingOverlay loadingMsg={"Carregando dados..."} />
+      )}
+    </DataCtx.Provider>
   );
 };
 

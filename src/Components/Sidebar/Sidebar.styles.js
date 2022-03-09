@@ -7,18 +7,7 @@ export const Container = styled.div`
   position: fixed;
   width: 20vw;
   z-index: 997;
-  //animation
-  animation: slide-left 1000ms ease-out forwards;
-  @keyframes slide-left {
-    from {
-      opacity: 0;
-      transform: translateX(-6rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+
   //media query
   @media only screen and (max-width: 980px) {
     width: ${({ mobileSidebarExpanded }) => (mobileSidebarExpanded ? "95vw" : "15vw")};

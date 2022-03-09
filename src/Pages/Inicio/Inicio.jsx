@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import InfoCard from "../../Components/InfoCard/InfoCard";
 import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider } from "../Pages.styles";
 import cirurgiaImg from "../../Assets/cirurgias_icon.png";
@@ -14,6 +14,7 @@ import img from "../../Assets/avatar.png";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { ArrowLeft, ArrowRight } from "./Inicio.styles";
 import CampanhasChart from "../../Components/CampanhasChart/CampanhasChart";
+import { DataCtx } from "../Dashboard/Dashboard";
 
 const cardData = [
   {
@@ -33,30 +34,6 @@ const cardData = [
     title: "Contas Médicas",
     value: 50,
     img: contaImg,
-  },
-];
-
-const statisticsCardData = [
-  {
-    id: 1,
-    title: "Doações",
-    value: 20.0,
-    percentageChange: 2.5,
-    img: increase,
-  },
-  {
-    id: 2,
-    title: "Pacientes",
-    value: 300,
-    percentageChange: -4.4,
-    img: decrease,
-  },
-  {
-    id: 3,
-    title: "Novos Usuários",
-    value: 37,
-    percentageChange: 2.5,
-    img: increase,
   },
 ];
 
@@ -120,6 +97,33 @@ const pedidosDestaquesData = [
 ];
 
 const Inicio = () => {
+  const { pacientes } = useContext(DataCtx);
+
+  console.log(pacientes);
+
+  const statisticsCardData = [
+    {
+      id: 1,
+      title: "Doações",
+      value: 20.0,
+      percentageChange: 2.5,
+      img: increase,
+    },
+    {
+      id: 2,
+      title: "Pacientes",
+      value: pacientes?.data?.length,
+      percentageChange: -4.4,
+      img: decrease,
+    },
+    {
+      id: 3,
+      title: "Usuários",
+      value: 37,
+      percentageChange: 2.5,
+      img: increase,
+    },
+  ];
   return (
     <PageContainer>
       <SectionContainer>
