@@ -7,22 +7,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const options = {
   responsive: true,
-  scales: {
-    xAxes: [
-      {
-        gridLines: {
-          color: "rgba(0, 0, 0, 0)",
-        },
-      },
-    ],
-    yAxes: [
-      {
-        gridLines: {
-          color: "rgba(0, 0, 0, 0)",
-        },
-      },
-    ],
-  },
+
   plugins: {
     legend: {
       display: false,
