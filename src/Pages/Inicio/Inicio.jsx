@@ -82,9 +82,27 @@ const Inicio = () => {
 
   const cirurgias = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 0);
 
+  setTimeout(() => {
+    console.log("CIRURGIAS:");
+    console.log(cirurgias);
+    console.log("----------------------");
+  }, 2500);
+
   const exames = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 1);
 
+  setTimeout(() => {
+    console.log("EXAMES:");
+    console.log(exames);
+    console.log("----------------------");
+  }, 2500);
+
   const contasMedicas = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 2);
+
+  setTimeout(() => {
+    console.log("CONTAS MEDICAS:");
+    console.log(contasMedicas);
+    console.log("----------------------");
+  }, 2500);
 
   const cardData = [
     {
