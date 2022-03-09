@@ -80,17 +80,11 @@ const Inicio = () => {
 
   //CARDS DE CIRURGIAS, EXAMES E CONTAS MEDICAS /////////////////////////////////////////////////////////
 
-  const cirurgias = casos?.data?.filter((c) => {
-    return c.TipoCaso.TPC_Id === 0;
-  });
+  const cirurgias = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 0);
 
-  const exames = casos?.data?.filter((c) => {
-    return c.TipoCaso.TPC_Id === 1;
-  });
+  const exames = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 1);
 
-  const contasMedicas = casos?.data?.filter((c) => {
-    return c.TipoCaso.TPC_Id === 2;
-  });
+  const contasMedicas = casos?.data?.filter((c) => c.TipoCaso.TPC_Id === 2);
 
   const cardData = [
     {
