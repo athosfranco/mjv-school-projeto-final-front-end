@@ -18,6 +18,8 @@ const URL_BASE = "http://44.202.73.116:50660/api/";
 const CASOS_ENDPOINT = "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=9999&order_by=CAS_Id";
 const PACIENTES_ENDPOINT =
   "Paciente/GetAllPaciente?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=9999&order_by=PAC_Id";
+const USERS_ENDPOINT =
+  "Usuario/GetAllUsuario?fVerTodos=true&fSomenteAtivos=false&join=true&maxInstances=9999&order_by=USR_Id";
 
 //data context
 export const DataCtx = createContext();
@@ -45,6 +47,7 @@ const Dashboard = () => {
   /////////////////////// data state
   const [casos, setCasos] = useState(false);
   const [pacientes, setPacientes] = useState(false);
+  const [usuarios, setUsuarios] = useState(false);
 
   ////////////////////////////////////////////////////////////
 
@@ -62,8 +65,10 @@ const Dashboard = () => {
           "Access-Control-Allow-Origin": "*",
         },
       });
+      console.log(`DADO: ${endpoint.split("/")[4].toUpperCase()}`);
       setData(res);
-      console.log(res);
+      console.log(res.data);
+      console.log("----------------");
     } catch (err) {
       // console.log(err);
     }
@@ -76,6 +81,7 @@ const Dashboard = () => {
   useEffect(() => {
     fetchData(`${URL_BASE}${CASOS_ENDPOINT}`, setCasos);
     fetchData(`${URL_BASE}${PACIENTES_ENDPOINT}`, setPacientes);
+    fetchData(`${URL_BASE}${USERS_ENDPOINT}`, setUsuarios);
   }, []);
 
   /////////////////////////////////////////////////////////////////////
@@ -83,8 +89,8 @@ const Dashboard = () => {
   const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
 
   return (
-    <DataCtx.Provider value={{ casos, pacientes }}>
-      {casos && pacientes ? (
+    <DataCtx.Provider value={{ casos, pacientes, usuarios }}>
+      {casos && pacientes && usuarios ? (
         <PageContainer>
           {modalState?.display &&
             ReactDOM.createPortal(

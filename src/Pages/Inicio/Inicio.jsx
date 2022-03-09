@@ -16,27 +16,6 @@ import { ArrowLeft, ArrowRight } from "./Inicio.styles";
 import CampanhasChart from "../../Components/CampanhasChart/CampanhasChart";
 import { DataCtx } from "../Dashboard/Dashboard";
 
-const cardData = [
-  {
-    id: 1,
-    title: "Cirurgia",
-    value: 200,
-    img: cirurgiaImg,
-  },
-  {
-    id: 2,
-    title: "Exames",
-    value: 30,
-    img: exameImg,
-  },
-  {
-    id: 3,
-    title: "Contas Médicas",
-    value: 50,
-    img: contaImg,
-  },
-];
-
 const pedidosDestaquesData = [
   {
     id: 1,
@@ -97,9 +76,44 @@ const pedidosDestaquesData = [
 ];
 
 const Inicio = () => {
-  const { pacientes } = useContext(DataCtx);
+  const { casos, pacientes, usuarios } = useContext(DataCtx);
 
-  console.log(pacientes);
+  //CARDS DE CIRURGIAS, EXAMES E CONTAS MEDICAS /////////////////////////////////////////////////////////
+
+  const cirurgias = casos?.data?.filter((c) => {
+    return c.TipoCaso.TPC_Id === 0;
+  });
+
+  const exames = casos?.data?.filter((c) => {
+    return c.TipoCaso.TPC_Id === 1;
+  });
+
+  const contasMedicas = casos?.data?.filter((c) => {
+    return c.TipoCaso.TPC_Id === 2;
+  });
+
+  const cardData = [
+    {
+      id: 1,
+      title: "Cirurgia",
+      value: cirurgias.length,
+      img: cirurgiaImg,
+    },
+    {
+      id: 2,
+      title: "Exames",
+      value: exames.length,
+      img: exameImg,
+    },
+    {
+      id: 3,
+      title: "Contas Médicas",
+      value: contasMedicas.length,
+      img: contaImg,
+    },
+  ];
+
+  // CARDS DE ESTATÍSTICAS //////////////////////////////////////////////////////////////////////////////////
 
   const statisticsCardData = [
     {
@@ -119,7 +133,7 @@ const Inicio = () => {
     {
       id: 3,
       title: "Usuários",
-      value: 37,
+      value: usuarios?.data?.length,
       percentageChange: 2.5,
       img: increase,
     },
