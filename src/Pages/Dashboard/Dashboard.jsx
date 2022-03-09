@@ -14,8 +14,10 @@ import axios from "axios";
 const URL_BASE = "http://44.202.73.116:50660/api/";
 
 /////// Endpoints necessárias para fazer a requisiçao dos dados
-const CASOS_ENDPOINT =
-  "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=999999&order_by=CAS_Id";
+const CASOS_ENDPOINT = "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=150&order_by=CAS_Id";
+
+const TESTE_FETCH =
+  "http://api.leapstyle.me/api/Usuario/GetAllUsuario?fVerTodos=true&fSomenteAtivos=false&join=true&maxInstances=99999&order_by=DtInclusao";
 
 const Dashboard = () => {
   //sidebar status
@@ -48,7 +50,7 @@ const Dashboard = () => {
           password: "e8daa6779d7f418443ade747ac9ed4552efhjnx",
         },
         headers: {
-          // Authorization: "Basic QWNjZXNzTGVhcFN0eWxlREVWQVBJOk1qQk1SV0Z3VTNSNVRHVlNiMk5yZEZOMGRXUnBiekl4",
+          Authorization: "Basic QWNjZXNzTGVhcFN0eWxlREVWQVBJOk1qQk1SV0Z3VTNSNVRHVlNiMk5yZEZOMGRXUnBiekl4",
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
