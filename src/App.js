@@ -6,6 +6,7 @@ import LoginProvider from "./Context/LoginProvider";
 import Rotas from "./Rotas";
 import ModalProvider from "./Context/ModalProvider";
 import CasoDeAnalise from "./Components/CasoDeAnalise/CasoDeAnalise";
+import DataProvider from "./Context/DataProvider";
 
 export const ThemeCtx = createContext();
 
@@ -26,11 +27,14 @@ function App() {
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
         <ThemeCtx.Provider value={{ handleToggleTheme, theme }}>
-          <LoginProvider>
-            <ModalProvider>
-              <Rotas />
-            </ModalProvider>
-          </LoginProvider>
+          <DataProvider>
+            {" "}
+            <LoginProvider>
+              <ModalProvider>
+                <Rotas />
+              </ModalProvider>
+            </LoginProvider>
+          </DataProvider>
         </ThemeCtx.Provider>
       </ThemeProvider>
     </>
