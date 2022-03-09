@@ -27,7 +27,7 @@ export const CardContainer = styled.div`
     transform: scale(1.05);
   }
   //media query
-  @media only screen and (max-width: 980px) {
+  @media only screen and (max-width: 1150px) {
     width: 100%;
     margin: 5px;
   }

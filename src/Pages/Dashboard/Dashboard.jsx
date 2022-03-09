@@ -14,10 +14,7 @@ import axios from "axios";
 const URL_BASE = "http://44.202.73.116:50660/api/";
 
 /////// Endpoints necessárias para fazer a requisiçao dos dados
-const CASOS_ENDPOINT = "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=150&order_by=CAS_Id";
-
-const TESTE_FETCH =
-  "http://api.leapstyle.me/api/Usuario/GetAllUsuario?fVerTodos=true&fSomenteAtivos=false&join=true&maxInstances=99999&order_by=DtInclusao";
+const CASOS_ENDPOINT = "Caso/GetAllCaso?fVerTodos=true&fSomenteAtivos=true&join=true&maxInstances=9999&order_by=CAS_Id";
 
 const Dashboard = () => {
   //sidebar status

@@ -148,6 +148,7 @@ const Inicio = () => {
           {statisticsCardData.map((card) => {
             return (
               <InfoCard
+                id={card.id}
                 title={card.title}
                 value={card.value}
                 percentageChange={card.percentageChange}
@@ -172,7 +173,13 @@ const Inicio = () => {
           <Carousel show={3.5} slide={1} swiping={true} rightArrow={<ArrowRight />} leftArrow={<ArrowLeft />}>
             {pedidosDestaquesData.map((pedido) => {
               return (
-                <PedidoDestaque username={pedido.username} imgSrc={pedido.img} data={pedido.data} desc={pedido.desc} />
+                <PedidoDestaque
+                  key={pedido.id}
+                  username={pedido.username}
+                  imgSrc={pedido.img}
+                  data={pedido.data}
+                  desc={pedido.desc}
+                />
               );
             })}
           </Carousel>
