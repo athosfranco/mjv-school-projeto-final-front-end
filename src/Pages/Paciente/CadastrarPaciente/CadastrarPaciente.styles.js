@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 export const CadastrarContainer = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -6,9 +7,44 @@ export const CadastrarContainer = styled.div`
   border-radius: 12px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
   padding: 15px;
+  width: 77vw;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 `;
 
 export const CadastroForm = styled.form``;
+
+export const ExpandirBtn = styled(AiFillPlusCircle)`
+  cursor: pointer;
+
+  font-size: 25px;
+  &:hover {
+    color: #2196f3;
+    transform: scale(1.3);
+  }
+  &:active {
+    color: #2196f3;
+    transform: scale(0.9);
+  }
+`;
+
+export const ColapsarBtn = styled(AiFillMinusCircle)`
+  cursor: pointer;
+  font-size: 25px;
+  &:hover {
+    color: #2196f3;
+    transform: scale(1.3);
+  }
+  &:active {
+    color: #2196f3;
+    transform: scale(0.9);
+  }
+`;
 
 export const FormSection = styled.div`
   display: flex;
@@ -22,15 +58,16 @@ export const InputWrap = styled.div`
 `;
 
 export const Label = styled.label`
-  margin: 5px 0;
+  margin: 3px 0;
+  font-size: 14px;
 `;
 
 export const Input = styled.input`
     border: 2px solid ${({ theme }) => theme.border};
-    border-radius: 10px;
-    width: 300px;
-    padding: 5px;
-    font-size: 16px;
+    border-radius: 25px;
+    width: ${({ wd }) => (wd ? `${wd}px` : "300px")};
+    padding: 4px 8px;
+    font-size: 14px;
     outline: none;
     background-image: none;
     background-color: transparent;
