@@ -73,7 +73,9 @@ export const ValueSmall = styled.span`
   }
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  width: 100px;
+`;
 
 export const ButtonWrapper = styled.div`
   width: 100%;

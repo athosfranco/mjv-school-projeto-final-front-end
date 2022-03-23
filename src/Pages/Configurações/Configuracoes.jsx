@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider } from "../Pages.styles";
-import { Switch } from "@mui/material";
 import { OptionContainer, OptionTitle, OptionDesc } from "./Configuracoes.styles";
 import { ThemeCtx } from "../../App";
 
@@ -24,7 +23,7 @@ const Configuracoes = () => {
         <SectionWrapper>
           <OptionContainer>
             <OptionTitle>Modo Escuro</OptionTitle>
-            <Switch onChange={themeConfigHandler} checked={theme !== "light"} />
+            {/* <Switch onChange={themeConfigHandler} checked={theme !== "light"} /> */}
             <OptionDesc>
               Modifica a paleta de cores para uma com tons escuros, diminuindo a luminosidade da tela.
             </OptionDesc>

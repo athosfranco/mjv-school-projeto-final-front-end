@@ -1,10 +1,10 @@
 import React from "react";
-import UnderConstruction from "../../Components/UnderConstruction/UnderConstruction";
+import CadastrarPaciente from "./CadastrarPaciente/CadastrarPaciente";
 
 const Paciente = () => {
   return (
     <div>
-      <UnderConstruction />
+      <CadastrarPaciente />
     </div>
   );
 };

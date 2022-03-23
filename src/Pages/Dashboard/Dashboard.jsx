@@ -45,9 +45,9 @@ const Dashboard = () => {
   const [refresh, setRefresh] = useState(false);
 
   /////////////////////// data state
-  const [casos, setCasos] = useState(false);
+  const [medicos, setMedicos] = useState(false);
   const [pacientes, setPacientes] = useState(false);
-  const [usuarios, setUsuarios] = useState(false);
+  const [consultas, setConsultas] = useState(false);
 
   ////////////////////////////////////////////////////////////
 
@@ -74,14 +74,22 @@ const Dashboard = () => {
     }
   };
 
-  //funçao que verifica se o usuario tem permissao
-  const checkAccessLevel = (user, requiredLevel) => (user.accessLevel >= requiredLevel ? true : false);
+  const fetchGet = async (endpoint, setData) => {
+    try {
+      axios.get(endpoint).then((res) => {
+        console.log(res);
+        setData(res);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  //faz o fetch da lista de usuarios na primeira vez em que o app abre
+  //faz o fetch dos dados no primeiro load do front
   useEffect(() => {
-    fetchData(`${URL_BASE}${CASOS_ENDPOINT}`, setCasos);
-    fetchData(`${URL_BASE}${PACIENTES_ENDPOINT}`, setPacientes);
-    fetchData(`${URL_BASE}${USERS_ENDPOINT}`, setUsuarios);
+    fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/pacientes/listarTodos`, setPacientes);
+    fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/medicos/listarTodos`, setMedicos);
+    fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/consultas/listarTodos`, setConsultas);
   }, []);
 
   /////////////////////////////////////////////////////////////////////
@@ -89,8 +97,8 @@ const Dashboard = () => {
   const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
 
   return (
-    <DataCtx.Provider value={{ casos, pacientes, usuarios }}>
-      {casos && pacientes && usuarios ? (
+    <DataCtx.Provider value={{ medicos, pacientes, consultas }}>
+      {pacientes && medicos && consultas ? (
         <PageContainer>
           {modalState?.display &&
             ReactDOM.createPortal(

@@ -2,7 +2,7 @@ export const lightTheme = {
   body: "#FDFDFD",
   text: "#464255",
   border: "lightgray",
-  background: "#F7F7F7",
+  background: "#eeeeee",
   success: "#00A389",
   danger: "#FF5B5B",
   warning: "#FFBB54",
