@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import LoginCtx from "../../Context/LoginContext";
 import LoginModal from "../../Components/LoginModal/LoginModal";
 import { getCurrentYear } from "../../GeneralFunctions";
-import { PageContainer } from "./LoginPage.styles";
+import { PageContainer, IconWrapper, LinkedinIcon, GithubIcon } from "./LoginPage.styles";
 
 const year = getCurrentYear();
 
@@ -23,10 +23,19 @@ const LoginPage = () => {
       <main>
         <LoginModal onGetCredentials={loginHandler} />
       </main>
+      <IconWrapper>
+        <a href="https://www.linkedin.com/in/athosfranco/">
+          {" "}
+          <LinkedinIcon />
+        </a>
+        <a href="https://github.com/athosfranco">
+          <GithubIcon />
+        </a>
+      </IconWrapper>
       <footer>
-        <span>Junta Dashboard v.0.1</span>
-        <a href="http://rocketstudio.com.br/" target="_blank" rel="noreferrer">
-          Rocket Studio - {year} 🚀
+        <span>MJV Clinic (v.1.0)</span>
+        <a href="https://athosfranco.netlify.app/" target="_blank" rel="noreferrer">
+          Desenvolvido com 💗 por Athos Franco - {year}
         </a>
       </footer>
     </PageContainer>

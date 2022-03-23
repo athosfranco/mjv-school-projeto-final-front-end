@@ -107,19 +107,19 @@ const Inicio = () => {
   const cardData = [
     {
       id: 1,
-      title: "Cirurgia",
+      title: "Pacientes",
       value: cirurgias.length,
       img: cirurgiaImg,
     },
     {
       id: 2,
-      title: "Exames",
+      title: "Médicos",
       value: exames.length,
       img: exameImg,
     },
     {
       id: 3,
-      title: "Contas Médicas",
+      title: "Consultas",
       value: contasMedicas.length,
       img: contaImg,
     },

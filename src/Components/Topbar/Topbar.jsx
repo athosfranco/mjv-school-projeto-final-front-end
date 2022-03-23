@@ -101,7 +101,9 @@ const Topbar = () => {
     <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
         <CurrentPage>{currPageTitle}</CurrentPage>
-        <WelcomeMsg onClick={logoutHandler}>Olá, {state.userLoggedIn}. Bem vindo ao Junta.</WelcomeMsg>
+        <WelcomeMsg onClick={logoutHandler}>
+          Olá, {state.userLoggedIn}. Bem vindo ao Sistema de Gestão da MJV Clinic.
+        </WelcomeMsg>
       </LeftTopbarContent>
       <RightTopbarContent onClick={logoutHandler}>
         <UserAvatar src={avatar} />

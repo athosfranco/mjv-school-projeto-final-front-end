@@ -15,12 +15,15 @@ import {
   Actions,
   Image,
   IconWrapper,
+  ModalHeader,
+  LogoName1,
+  LogoName2,
 } from "./LoginModal.styles";
 import Button from "../../UI/Button/Button";
 import { ThemeCtx } from "../../App";
-import logo from "../../Assets/junta_cor.png";
 import LoginCtx from "../../Context/LoginContext";
 import { useNavigate } from "react-router-dom";
+import ClinicLogo from "../ClinicLogo/ClinicLogo";
 
 const LoginModal = ({ onGetCredentials }) => {
   let navigate = useNavigate();
@@ -44,15 +47,14 @@ const LoginModal = ({ onGetCredentials }) => {
   return (
     <>
       <ModalContainer>
-        <Logo>
-          <Image src={logo} />
-        </Logo>
+        <ClinicLogo />
 
         <TextContentWrapper>
-          <FirstText>Acesso ao sistema junta</FirstText>
-          <SecondText>Acesso ao sistema administrativo</SecondText>
+          <FirstText>Olá! Bem vindo ao Admin Dashboard.</FirstText>
+          <SecondText>Utilize suas credenciais para ter acesso.</SecondText>
           {showError && <ErrorMsg>Usuário ou senha incorretos.</ErrorMsg>}
         </TextContentWrapper>
+
         <Form>
           <InputWrapper>
             <UserInput

@@ -1,8 +1,9 @@
 import React from "react";
-import { Container, SidebarLogo, SidebarContainer, SidebarMenuBtn } from "./Sidebar.styles";
-import logo from "../../Assets/junta_cor.png";
+import { Container, SidebarContainer, SidebarMenuBtn } from "./Sidebar.styles";
+import logo from "../../Assets/logo_mjv.png";
 import UIContainer from "../../UI/UIContainer/UIContainer";
 import Navigation from "../Navigation/Navigation";
+import ClinicLogo from "../ClinicLogo/ClinicLogo";
 
 const Sidebar = ({ onSidebarToggle, mobileSidebarExpanded }) => {
   return (
@@ -10,7 +11,7 @@ const Sidebar = ({ onSidebarToggle, mobileSidebarExpanded }) => {
       <SidebarMenuBtn onClick={onSidebarToggle} />
       <UIContainer>
         <SidebarContainer>
-          <SidebarLogo src={logo} />
+          <ClinicLogo />
           <Navigation mobileSidebarExpanded={mobileSidebarExpanded} />
         </SidebarContainer>
       </UIContainer>

@@ -5,7 +5,7 @@ import { LoadingOverlayContainer } from "./LoadingOverlay.styles";
 const LoadingOverlay = ({ loadingMsg }) => {
   return (
     <LoadingOverlayContainer>
-      <ReactLoading type="spin" color="#A91A1C" height={150} width={150} />
+      <ReactLoading type="spin" color="#2196f3" height={150} width={150} />
       <span>{loadingMsg}</span>
     </LoadingOverlayContainer>
   );

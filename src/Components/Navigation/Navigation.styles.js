@@ -22,8 +22,8 @@ export const NavItem = styled.div`
   border-radius: 10px;
   cursor: pointer;
   &:hover {
-    color: #a91b1c;
-    background-color: #a91b1c26;
+    color: #0b3f54;
+    background-color: rgba(30, 145, 191, 0.5);
   }
   &:active {
     transform: scale(0.95);

@@ -28,17 +28,6 @@ export const ModalContainer = styled.div`
   }
 `;
 
-export const Logo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Image = styled.img`
-  width: 210px;
-  height: 112px;
-`;
-
 export const TextContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -65,7 +54,7 @@ export const InputWrapper = styled.div`
 
 export const UserInput = styled.input`
   border: 2px solid ${({ theme }) => theme.border};
-  border-radius: 12px;
+  border-radius: 10px;
   width: 100%;
   padding: 15px 20px;
   outline: none;
@@ -78,7 +67,7 @@ export const UserInput = styled.input`
   transition: 0.2s ease;
   color: ${({ theme }) => theme.text};
   &:focus {
-    border: 2px solid #a91b1c;
+    border: 2px solid #2196f3;
   }
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -96,7 +85,6 @@ export const Actions = styled.div`
 
 export const ForgotPassSpan = styled.span`
   font-size: 12px;
-  color: darkgray;
   cursor: pointer;
   text-align: right;
   margin-bottom: 80px;
@@ -142,4 +130,17 @@ export const ErrorMsg = styled.span`
   font-style: italic;
   color: tomato;
   text-align: center;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
 `;
