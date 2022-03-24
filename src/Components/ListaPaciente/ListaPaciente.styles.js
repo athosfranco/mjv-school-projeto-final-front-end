@@ -12,6 +12,9 @@ export const ListaContainer = styled.div`
   //layout
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 ///////// tabela
@@ -33,14 +36,23 @@ export const Thead = styled.thead`
 
 export const Tr = styled.tr``;
 
-export const Th = styled.th``;
+export const Th = styled.th`
+  padding: 5px;
+`;
 
 export const Tbody = styled.tbody``;
 
-export const PacienteRow = styled.tr``;
+export const PacienteRow = styled.tr`
+  cursor: pointer;
+  &:hover {
+    background-color: #eeeeee;
+  }
+`;
 
 export const PacienteTd = styled.td`
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 15px;
+  outline: none;
   border-bottom: 1px solid darkgray;
+  font-size: 16px;
 `;

@@ -87,17 +87,23 @@ const Dashboard = () => {
 
   //faz o fetch dos dados no primeiro load do front
   useEffect(() => {
+    if (refresh) {
+      setPacientes(false);
+      setMedicos(false);
+      setConsultas(false);
+    }
     fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/pacientes/listarTodos`, setPacientes);
     fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/medicos/listarTodos`, setMedicos);
     fetchGet(`https://athos-clinica-medica-api-mjv.herokuapp.com/consultas/listarTodos`, setConsultas);
-  }, []);
+    setRefresh(false);
+  }, [refresh]);
 
   /////////////////////////////////////////////////////////////////////
 
   const sidebarToggleHandler = () => setMobileSidebarExpanded(!mobileSidebarExpanded);
 
   return (
-    <DataCtx.Provider value={{ medicos, pacientes, consultas }}>
+    <DataCtx.Provider value={{ medicos, pacientes, consultas, setRefresh }}>
       {pacientes && medicos && consultas ? (
         <PageContainer>
           {modalState?.display &&

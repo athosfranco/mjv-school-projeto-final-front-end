@@ -1,12 +1,8 @@
 import React from "react";
 import UnderConstruction from "../../Components/UnderConstruction/UnderConstruction";
 
-const Cirurgia = () => {
-  return (
-    <div>
-      <UnderConstruction />
-    </div>
-  );
+const Receita = () => {
+  return <div>xumbilau</div>;
 };
 
-export default Cirurgia;
+export default Receita;

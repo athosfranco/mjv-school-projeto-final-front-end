@@ -35,29 +35,17 @@ const Topbar = () => {
       case basePathname:
         setCurrPageTitle("Início");
         break;
-      case basePathname + "mensagem":
-        setCurrPageTitle("Mensagem");
+      case basePathname + "pacientes":
+        setCurrPageTitle("Pacientes");
         break;
-      case basePathname + "paciente":
-        setCurrPageTitle("Paciente");
+      case basePathname + "medicos":
+        setCurrPageTitle("Médicos");
         break;
-      case basePathname + "atendimentos":
-        setCurrPageTitle("Atendimentos");
+      case basePathname + "consultas":
+        setCurrPageTitle("Consultas");
         break;
-      case basePathname + "metas":
-        setCurrPageTitle("Metas");
-        break;
-      case basePathname + "financeiros":
-        setCurrPageTitle("Financeiros");
-        break;
-      case basePathname + "cirurgia":
-        setCurrPageTitle("Cirurgia");
-        break;
-      case basePathname + "exames":
-        setCurrPageTitle("Exames");
-        break;
-      case basePathname + "conta-medica":
-        setCurrPageTitle("Conta Médica");
+      case basePathname + "receita":
+        setCurrPageTitle("Receita");
         break;
       case basePathname + "configuracoes":
         setCurrPageTitle("Configurações");

@@ -1,12 +1,8 @@
 import React from "react";
 import UnderConstruction from "../../Components/UnderConstruction/UnderConstruction";
 
-const Exames = () => {
-  return (
-    <div>
-      <UnderConstruction />
-    </div>
-  );
+const Consultas = () => {
+  return <div>consultas</div>;
 };
 
-export default Exames;
+export default Consultas;

@@ -22,14 +22,14 @@ const data = [
     title: "Pacientes",
     icon: <AiOutlineUser />,
     expansive: false,
-    path: "./paciente",
+    path: "./pacientes",
   },
   {
     id: 3,
     title: "Médicos",
     icon: <AiOutlineFileAdd />,
     expansive: false,
-    path: "./atendimentos",
+    path: "./medicos",
   },
 
   {
@@ -37,14 +37,14 @@ const data = [
     title: "Consultas",
     icon: <BsFileEarmarkMedical />,
     expansive: false,
-    path: "./exames",
+    path: "./consultas",
   },
   {
     id: 5,
     title: "Receita",
     icon: <BsCoin />,
     expansive: false,
-    path: "./conta-medica",
+    path: "./receita",
   },
   {
     id: 6,
