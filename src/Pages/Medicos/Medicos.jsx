@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ListaMedico from "../../Components/ListaMedico/ListaMedico";
 import { DataCtx } from "../Dashboard/Dashboard";
-import { Divider, PageContainer, SectionContainer, SectionTitle, SectionWrapper } from "../Pages.styles";
+import { Divider, SectionContainer, SectionTitle } from "../Pages.styles";
 import CadastrarMedico from "./CadastrarMedico/CadastrarMedico";
 
 const Medicos = () => {

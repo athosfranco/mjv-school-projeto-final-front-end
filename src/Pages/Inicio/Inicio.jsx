@@ -4,9 +4,6 @@ import { PageContainer, SectionContainer, SectionTitle, SectionWrapper, Divider 
 import pacienteSvg from "../../Assets/patient_svg.svg";
 import medicoSvg from "../../Assets/doctor_svg.svg";
 import consultaSvg from "../../Assets/consulta_svg.svg";
-import increase from "../../Assets/increase.png";
-import decrease from "../../Assets/decrease.png";
-
 import ChartComponent from "../../Components/ChartComponent/ChartComponent";
 
 import { Carousel } from "@trendyol-js/react-carousel";
@@ -40,31 +37,6 @@ const Inicio = () => {
     },
   ];
 
-  // CARDS DE ESTATÍSTICAS //////////////////////////////////////////////////////////////////////////////////
-
-  const statisticsCardData = [
-    {
-      id: 1,
-      title: "Doações",
-      value: 20.0,
-      percentageChange: 2.5,
-      img: increase,
-    },
-    {
-      id: 2,
-      title: "Pacientes",
-      value: 2,
-      percentageChange: -4.4,
-      img: decrease,
-    },
-    {
-      id: 3,
-      title: "Usuários",
-      value: 3,
-      percentageChange: 2.5,
-      img: increase,
-    },
-  ];
   return (
     <PageContainer>
       <SectionContainer>
@@ -89,17 +61,10 @@ const Inicio = () => {
       <SectionContainer>
         <SectionTitle>Estatísticas Semanais</SectionTitle>
         <Divider />
-        <SectionWrapper>
-          {/*    <ChartComponent title={"Pacientes"} value={98} />
-          <ChartComponent title={"Cirurgias"} value={110} />
-          <ChartComponent title={"Lista de Espera"} value={155} /> */}
-        </SectionWrapper>
-        {/* <Casos casos={CASOS_DUMMY_DATA} /> */}
       </SectionContainer>
       <SectionContainer>
         <SectionTitle>Estatísticas Mensais</SectionTitle>
         <Divider />
-        {/* <CampanhasChart /> */}
       </SectionContainer>
     </PageContainer>
   );

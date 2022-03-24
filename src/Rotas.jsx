@@ -11,9 +11,10 @@ import Paciente from "./Pages/Paciente/Paciente";
 import Configuracoes from "./Pages/Configurações/Configuracoes";
 import Medicos from "./Pages/Medicos/Medicos";
 import Receita from "./Pages/Receita/Receita";
-import Consultas from "./Pages/Consultas/Exames";
+import Consultas from "./Pages/Consultas/Consultas";
 import DetalhesPaciente from "./Pages/Paciente/DetalhesPaciente/DetalhesPaciente";
 import DetalhesMedico from "./Pages/Medicos/DetalhesMedico/DetalhesMedico";
+import DetalhesConsulta from "./Pages/Consultas/DetalhesConsulta/DetalhesConsulta";
 ///
 
 const Rotas = () => {
@@ -29,6 +30,7 @@ const Rotas = () => {
         { path: "pacientes", element: <Paciente /> },
         { path: "detalhesPaciente", element: <DetalhesPaciente /> },
         { path: "detalhesMedico", element: <DetalhesMedico /> },
+        { path: "detalhesConsulta", element: <DetalhesConsulta /> },
         { path: "medicos", element: <Medicos /> },
         { path: "consultas", element: <Consultas /> },
         { path: "receita", element: <Receita /> },
