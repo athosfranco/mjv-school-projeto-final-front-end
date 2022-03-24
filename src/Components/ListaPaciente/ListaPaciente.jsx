@@ -1,8 +1,12 @@
 import React from "react";
 import { formatarDataSemHora, formatarIdade, getFormattedDate } from "../../GeneralFunctions";
 import { ListaContainer, PacienteRow, PacienteTd, StyledTable, Tbody, Th, Thead, Tr } from "./ListaPaciente.styles";
+import { useNavigate } from "react-router-dom";
 
 const ListaPaciente = ({ lista }) => {
+  //navegaçao programada
+  let navigate = useNavigate();
+
   console.log(lista);
   return (
     <ListaContainer>
@@ -23,7 +27,12 @@ const ListaPaciente = ({ lista }) => {
         <Tbody>
           {lista?.map((paciente) => {
             return (
-              <PacienteRow key={paciente.id} onClick={() => {}}>
+              <PacienteRow
+                key={paciente.id}
+                onClick={() => {
+                  navigate(`/dashboard/detalhesPaciente/?id=${paciente.id}`, { replace: true });
+                }}
+              >
                 <PacienteTd>{paciente.id}</PacienteTd>
                 <PacienteTd>{paciente.pessoa.nomeCompleto}</PacienteTd>
                 <PacienteTd>{formatarIdade(paciente.pessoa.dataNascimento)}</PacienteTd>

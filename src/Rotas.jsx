@@ -12,6 +12,7 @@ import Configuracoes from "./Pages/Configurações/Configuracoes";
 import Medicos from "./Pages/Medicos/Medicos";
 import Receita from "./Pages/Receita/Receita";
 import Consultas from "./Pages/Consultas/Exames";
+import DetalhesPaciente from "./Pages/Paciente/DetalhesPaciente/DetalhesPaciente";
 ///
 
 const Rotas = () => {
@@ -25,6 +26,7 @@ const Rotas = () => {
       children: [
         { path: "", element: <Inicio /> },
         { path: "pacientes", element: <Paciente /> },
+        { path: "detalhesPaciente", element: <DetalhesPaciente /> },
         { path: "medicos", element: <Medicos /> },
         { path: "consultas", element: <Consultas /> },
         { path: "receita", element: <Receita /> },

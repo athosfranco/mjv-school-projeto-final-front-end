@@ -18,28 +18,47 @@ import { getCurrentDateWithTime } from "../../../GeneralFunctions";
 import ModalCtx from "../../../Context/ModalContext";
 
 //Esses valores são enviados nos campos de input que o usuário não informar
-const formCadastroPadrao = {
-  nomeCompletoInput: "string",
-  matriculaInput: "string",
-  cpfInput: "string",
-  rgInput: "string",
-  telInput: "string",
-  emailInput: "string",
-  dtNascInput: null,
-  dtCadastroInput: null,
-  logrInput: "string",
-  numeroInput: 0,
-  bairroInput: "string",
-  cepInput: "string",
-  complInput: "string",
-};
 
-const CadastrarPaciente = () => {
+const CadastrarPaciente = ({ tipoFormulario, pacienteEditado }) => {
+  //valores padrao do formulario
+  const formCadastroPadrao =
+    tipoFormulario === "atualizar"
+      ? {
+          nomeCompletoInput: pacienteEditado?.pessoa?.nomeCompleto,
+          matriculaInput: pacienteEditado?.matriculaPlanoDeSaude,
+          cpfInput: pacienteEditado?.pessoa?.cpf,
+          rgInput: pacienteEditado?.pessoa?.rg,
+          telInput: pacienteEditado?.pessoa?.telefone,
+          emailInput: pacienteEditado?.pessoa?.email,
+          dtNascInput: pacienteEditado?.pessoa?.dataNascimento,
+          dtCadastroInput: pacienteEditado?.dataInclusao,
+          logrInput: pacienteEditado?.pessoa?.endereco?.logradouro,
+          numeroInput: pacienteEditado?.pessoa?.endereco?.numero,
+          bairroInput: pacienteEditado?.pessoa?.endereco?.bairro,
+          cepInput: pacienteEditado?.pessoa?.endereco?.cep,
+          complInput: pacienteEditado?.pessoa?.endereco?.complemento,
+        }
+      : {
+          nomeCompletoInput: "string",
+          matriculaInput: "string",
+          cpfInput: "string",
+          rgInput: "string",
+          telInput: "string",
+          emailInput: "string",
+          dtNascInput: null,
+          dtCadastroInput: null,
+          logrInput: "string",
+          numeroInput: 0,
+          bairroInput: "string",
+          cepInput: "string",
+          complInput: "string",
+        };
+
   //refresh
   const { setRefresh } = useContext(DataCtx);
 
   //manipulaçao do modal
-  const { modalState, modalDispatch } = useContext(ModalCtx);
+  const { modalDispatch } = useContext(ModalCtx);
 
   //Mostrando o formulario (expandido ou nao)
   const [cadastroIsExpanded, setCadastroIsExpanded] = useState(false);
@@ -47,6 +66,7 @@ const CadastrarPaciente = () => {
   //msg de erro
   const [errorMsg, setErrorMsg] = useState();
 
+  //////////////////ADICIONANDO NOVO
   const reducer = (state, action) => {
     let newState;
     switch (action.type) {
@@ -102,6 +122,57 @@ const CadastrarPaciente = () => {
   console.log(formularioCadastroState);
 
   const toggleSectionHandler = () => setCadastroIsExpanded(!cadastroIsExpanded);
+
+  //funçao executada quando o formulario é editado
+  const editarPacienteHandler = () => {
+    modalDispatch({
+      type: "CONFIG_MODAL",
+      value: {
+        display: true,
+        title: "Atualização - Paciente",
+        text: `Deseja confirmar a atualização dos dados cadastrais do paciente "${formularioCadastroState.nomeCompletoInput}"?`,
+        modalWithBtn: true,
+        confirmBtnTxt: "Atualizar",
+        cancelBtnTxt: "Cancelar",
+        cancelHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+        },
+        confirmHandler: () => {
+          modalDispatch({ type: "SET_DISPLAY", value: false });
+          axios
+            .put(`https://athos-clinica-medica-api-mjv.herokuapp.com/pacientes/${pacienteEditado?.id}`, {
+              matriculaPlanoDeSaude: formularioCadastroState.matriculaInput,
+              pessoa: {
+                nomeCompleto: formularioCadastroState.nomeCompletoInput,
+                dataNascimento: formularioCadastroState.dtNascInput,
+                cpf: formularioCadastroState.cpfInput,
+                rg: formularioCadastroState.rgInput,
+                telefone: formularioCadastroState.telInput,
+                email: formularioCadastroState.emailInput,
+                endereco: {
+                  logradouro: formularioCadastroState.logrInput,
+                  numero: 0,
+                  bairro: formularioCadastroState.bairroInput,
+                  complemento: formularioCadastroState.complInput,
+                  cep: formularioCadastroState.cepInput,
+                },
+              },
+              dataInclusao: formularioCadastroState.dtCadastroInput,
+            })
+            .then(function (response) {
+              console.log(response);
+              setRefresh(true);
+            })
+            .catch(function (error) {
+              console.log(error);
+              setErrorMsg(
+                "❌ Algo de errado ao atualizar os dados cadastrais. Verifique se os campos estão preenchidos com valores válidos."
+              );
+            });
+        },
+      },
+    });
+  };
 
   //funçao executada quando o formulario é submetido
   const adicionarPacienteHandler = () => {
@@ -174,16 +245,21 @@ const CadastrarPaciente = () => {
     });
   };
 
+  //Navegar para a pagina de detalhes
+
   return (
     <CadastrarContainer>
       <Header onClick={toggleSectionHandler}>
         {" "}
-        <SectionTitle>Adicionar Novo Paciente</SectionTitle>
+        <SectionTitle>{tipoFormulario === "atualizar" ? "Editar Paciente" : "Adicionar Novo Paciente"}</SectionTitle>
         {cadastroIsExpanded ? <ColapsarBtn /> : <ExpandirBtn />}
       </Header>
 
       {cadastroIsExpanded && (
         <CadastroForm>
+          {tipoFormulario === "atualizar" && (
+            <span style={{ fontSize: "14px" }}>Os campos deixados em branco manterão o último valor.</span>
+          )}
           <FormSection>
             <InputWrap>
               {/* ////////////////////////////INPUT E VALIDAÇÃO - NOME COMPLETO ////////////////////////////////// */}
@@ -371,8 +447,12 @@ const CadastrarPaciente = () => {
               ></Input>
             </InputWrap>
           </FormSection>
-          <Button type="success" width={"220px"} onClick={adicionarPacienteHandler}>
-            Cadastrar Novo Paciente
+          <Button
+            type="success"
+            width={"280px"}
+            onClick={tipoFormulario === "atualizar" ? editarPacienteHandler : adicionarPacienteHandler}
+          >
+            {tipoFormulario === "atualizar" ? "Atualizar Paciente" : "Cadastrar Novo Paciente"}
           </Button>
           {errorMsg && (
             <span
