@@ -1,6 +1,6 @@
 import React from "react";
 import { formatarDataSemHora, formatarIdade, getFormattedDate } from "../../GeneralFunctions";
-import { ListaContainer, MedicoRow, MedicoTd, StyledTable, Tbody, Th, Thead, Tr } from "./ListaMedico.styles";
+import { ListaContainer, MedicoRow, MedicoTd, StyledTable, Tbody, Th, Thead, Tr, EspItem } from "./ListaMedico.styles";
 import { useNavigate } from "react-router-dom";
 
 const ListaMedico = ({ lista }) => {
@@ -40,7 +40,7 @@ const ListaMedico = ({ lista }) => {
                 <MedicoTd>{medico.codigoCRM}</MedicoTd>
                 <MedicoTd>
                   {medico?.especialidades.map((esp) => (
-                    <span>{esp.titulo}</span>
+                    <EspItem>{esp.titulo} </EspItem>
                   ))}
                 </MedicoTd>
                 <MedicoTd>{medico.pessoa.email}</MedicoTd>

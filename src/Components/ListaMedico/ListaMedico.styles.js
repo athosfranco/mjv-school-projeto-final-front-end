@@ -49,6 +49,15 @@ export const MedicoRow = styled.tr`
   }
 `;
 
+export const EspItem = styled.div`
+  background-color: #2f2f2f;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 3px;
+  font-size: 14px;
+`;
+
 export const MedicoTd = styled.td`
   text-align: center;
   padding: 5px 15px;

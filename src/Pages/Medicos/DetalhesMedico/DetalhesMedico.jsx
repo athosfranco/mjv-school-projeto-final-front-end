@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
-import { Details, DetalhesContainer, InfoTitle, InfoValue, InfoWrap } from "./DetalhesMedico.styles";
+import { Details, DetalhesContainer, InfoEsp, InfoTitle, InfoValue, InfoWrap } from "./DetalhesMedico.styles";
 import { FirstText } from "../../../Components/LoginModal/LoginModal.styles";
 import { Divider, SectionTitle } from "../../Pages.styles";
 import { InfoWrapper } from "../../../Components/CasoDeAnalise/CasoDeAnalise.styles";
@@ -12,6 +12,7 @@ import Button from "../../../UI/Button/Button";
 import ModalCtx from "../../../Context/ModalContext";
 import { DataCtx } from "../../Dashboard/Dashboard";
 import { useNavigate } from "react-router-dom";
+import { EspItem } from "../../../Components/ListaMedico/ListaMedico.styles";
 
 const DetalhesMedico = () => {
   //navegaçao programada
@@ -109,21 +110,21 @@ const DetalhesMedico = () => {
                 <InfoValue>{medico?.codigoCRM}</InfoValue>
               </InfoWrap>
               <InfoWrap>
-                <InfoTitle>Especialidades: </InfoTitle>
-                <InfoValue>
-                  {" "}
-                  {medico?.especialidades.map((esp) => (
-                    <span>{esp.titulo}</span>
-                  ))}
-                </InfoValue>
-              </InfoWrap>
-              <InfoWrap>
                 <InfoTitle>E-mail:</InfoTitle>
                 <InfoValue>{medico?.pessoa.email}</InfoValue>
               </InfoWrap>
               <InfoWrap>
                 <InfoTitle>Telefone:</InfoTitle>
                 <InfoValue>{medico?.pessoa.telefone}</InfoValue>
+              </InfoWrap>
+              <InfoWrap>
+                <InfoTitle>Especialidades: </InfoTitle>
+                <InfoEsp>
+                  {" "}
+                  {medico?.especialidades.map((esp) => (
+                    <EspItem>{esp.titulo} </EspItem>
+                  ))}
+                </InfoEsp>
               </InfoWrap>
               <InfoWrap>
                 <InfoTitle>Data de Inclusão:</InfoTitle>

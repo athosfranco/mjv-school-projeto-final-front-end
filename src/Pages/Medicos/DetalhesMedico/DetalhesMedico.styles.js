@@ -28,3 +28,8 @@ export const InfoTitle = styled.span`
 `;
 
 export const InfoValue = styled.span``;
+
+export const InfoEsp = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
