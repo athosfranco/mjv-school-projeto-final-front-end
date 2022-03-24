@@ -47,11 +47,10 @@ export const randomInt = (min, max) => {
 };
 
 export const formatarIdade = (anoNasc) => {
-  console.log(anoNasc);
   const cd = new Date();
   const anoNascFormatado = anoNasc.split("-")[0];
-  console.log(anoNascFormatado);
+
   const anoAtual = parseInt(cd.getFullYear());
-  console.log(anoAtual);
+
   return anoAtual - parseInt(anoNascFormatado);
 };

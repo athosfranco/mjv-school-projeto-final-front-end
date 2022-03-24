@@ -9,7 +9,6 @@ const Paciente = () => {
   const { pacientes } = useContext(DataCtx);
   return (
     <div>
-      <Outlet />
       <CadastrarPaciente tipoFormulario={"cadastro"} />
       <SectionContainer>
         <SectionTitle>Lista de Pacientes Cadastrados</SectionTitle>

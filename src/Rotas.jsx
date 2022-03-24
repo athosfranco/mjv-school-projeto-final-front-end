@@ -13,6 +13,7 @@ import Medicos from "./Pages/Medicos/Medicos";
 import Receita from "./Pages/Receita/Receita";
 import Consultas from "./Pages/Consultas/Exames";
 import DetalhesPaciente from "./Pages/Paciente/DetalhesPaciente/DetalhesPaciente";
+import DetalhesMedico from "./Pages/Medicos/DetalhesMedico/DetalhesMedico";
 ///
 
 const Rotas = () => {
@@ -27,6 +28,7 @@ const Rotas = () => {
         { path: "", element: <Inicio /> },
         { path: "pacientes", element: <Paciente /> },
         { path: "detalhesPaciente", element: <DetalhesPaciente /> },
+        { path: "detalhesMedico", element: <DetalhesMedico /> },
         { path: "medicos", element: <Medicos /> },
         { path: "consultas", element: <Consultas /> },
         { path: "receita", element: <Receita /> },
