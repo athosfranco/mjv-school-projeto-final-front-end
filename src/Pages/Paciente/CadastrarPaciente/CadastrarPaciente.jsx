@@ -32,7 +32,6 @@ const CadastrarPaciente = () => {
 
       {cadastroIsExpanded && (
         <CadastroForm onSubmit={adicionarPacienteHandler}>
-          <Divider />
           <FormSection>
             <InputWrap>
               <Label>Nome Completo</Label>

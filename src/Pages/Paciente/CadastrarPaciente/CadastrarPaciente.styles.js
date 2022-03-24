@@ -8,6 +8,7 @@ export const CadastrarContainer = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
   padding: 15px;
   width: 77vw;
+  margin-bottom: 20px;
 `;
 
 export const Header = styled.div`
