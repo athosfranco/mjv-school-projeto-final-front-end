@@ -2,7 +2,7 @@ import React from "react";
 import UnderConstruction from "../../Components/UnderConstruction/UnderConstruction";
 
 const Receita = () => {
-  return <div>xumbilau</div>;
+  return <div>Em construção</div>;
 };
 
 export default Receita;

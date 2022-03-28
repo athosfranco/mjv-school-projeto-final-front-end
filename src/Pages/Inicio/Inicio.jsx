@@ -10,6 +10,7 @@ import { Carousel } from "@trendyol-js/react-carousel";
 import { ArrowLeft, ArrowRight } from "./Inicio.styles";
 import CampanhasChart from "../../Components/CampanhasChart/CampanhasChart";
 import { DataCtx } from "../Dashboard/Dashboard";
+import Section from "../../Components/Section/Section";
 
 const Inicio = () => {
   const { medicos, pacientes, consultas } = useContext(DataCtx);
@@ -39,9 +40,7 @@ const Inicio = () => {
 
   return (
     <PageContainer>
-      <SectionContainer>
-        <SectionTitle>Informações rápidas</SectionTitle>
-        <Divider />
+      <Section sectionTitle="Informações Rápidas">
         <SectionWrapper>
           {cardData.map((card) => {
             return (
@@ -57,15 +56,10 @@ const Inicio = () => {
             );
           })}
         </SectionWrapper>
-      </SectionContainer>
-      <SectionContainer>
-        <SectionTitle>Estatísticas Semanais</SectionTitle>
-        <Divider />
-      </SectionContainer>
-      <SectionContainer>
-        <SectionTitle>Estatísticas Mensais</SectionTitle>
-        <Divider />
-      </SectionContainer>
+      </Section>
+      <Section sectionTitle="Estatísticas Mensais">
+        <h1>lalalala teste</h1>
+      </Section>
     </PageContainer>
   );
 };
