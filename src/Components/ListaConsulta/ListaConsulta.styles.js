@@ -22,6 +22,7 @@ export const StyledTable = styled(Table)`
   width: 95%;
   margin-top: 10px;
   margin-bottom: 100px;
+  overflow-y: scroll;
   @media only screen and (max-width: 900px) {
     margin-top: 10px;
     margin-bottom: 50px;

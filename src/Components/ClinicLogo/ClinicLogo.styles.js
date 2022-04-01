@@ -5,6 +5,9 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    ${({ sidebar }) => sidebar && "display: none;"};
+  }
 `;
 
 export const LogoName1 = styled.h1`

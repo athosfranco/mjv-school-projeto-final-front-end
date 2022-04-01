@@ -2,9 +2,9 @@ import React from "react";
 import { Image, LogoContainer, LogoName1, LogoName2 } from "./ClinicLogo.styles";
 import logo from "../../Assets/logo_clinic.png";
 
-const ClinicLogo = () => {
+const ClinicLogo = ({ sidebar }) => {
   return (
-    <LogoContainer>
+    <LogoContainer sidebar={sidebar}>
       <Image src={logo} />
       <>
         {" "}

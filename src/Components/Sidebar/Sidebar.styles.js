@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { VscListSelection } from "react-icons/vsc";
+import ClinicLogo from "../ClinicLogo/ClinicLogo";
 
 export const Container = styled.div`
   flex: 1;
@@ -52,6 +53,12 @@ export const SidebarMenuBtn = styled(VscListSelection)`
     color: ${({ theme }) => theme.primary};
   }
   @media only screen and (min-width: 980px) {
+    display: none;
+  }
+`;
+
+export const ClinicLogoSidebar = styled(ClinicLogo)`
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
