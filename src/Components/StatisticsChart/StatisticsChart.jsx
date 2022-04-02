@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { StatisticsContainer } from "./StatisticsChart.styles";
+import { StatisticsContainer, YearOption, YearSelectionDiv } from "./StatisticsChart.styles";
 import { DataCtx } from "../../Pages/Dashboard/Dashboard";
 
 const anoAtual = new Date().getFullYear();
@@ -166,6 +166,15 @@ const StatisticsChart = () => {
   };
   return (
     <StatisticsContainer>
+      <YearSelectionDiv>
+        {anosComCadastro.map((ano) => {
+          return (
+            <YearOption isSelected={ano == anoSelecionado} onClick={() => setAnoSelecionado(ano)}>
+              {ano}
+            </YearOption>
+          );
+        })}
+      </YearSelectionDiv>
       <Line options={options} data={data} />
     </StatisticsContainer>
   );

@@ -39,20 +39,6 @@ const data = [
     expansive: false,
     path: "./consultas",
   },
-  {
-    id: 5,
-    title: "Receita",
-    icon: <BsCoin />,
-    expansive: false,
-    path: "./receita",
-  },
-  {
-    id: 6,
-    title: "Configurações",
-    icon: <HiOutlineCog />,
-    expansive: false,
-    path: "./configuracoes",
-  },
 ];
 
 const navigateHandler = (navigateFn, path) => navigateFn(path, { replace: true });

@@ -7,6 +7,7 @@ export const Btn = styled.button`
   color: ${({ type }) => (type === "disabled" ? "darkgray" : "white")};
   width: ${({ width }) => (width ? width : "100%")};
   margin-right: ${({ mright }) => (mright ? mright : "")};
+  ${({ margin }) => margin && `margin: ${margin}`};
   padding: 15px;
   background-color: ${({ type, theme }) => {
     if (type === "success") {

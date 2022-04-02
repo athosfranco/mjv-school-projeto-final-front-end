@@ -77,3 +77,36 @@ export const ArrowRight = styled(AiOutlineArrowRight)`
     font-size: 15px;
   }
 `;
+
+export const AboutContainer = styled.div`
+  display: flex;
+  margin-bottom: 50px;
+`;
+
+export const AboutTitle = styled.h2`
+  font-family: "Poppins", sans-serif;
+`;
+
+export const AboutText = styled.p`
+  line-height: 2;
+  margin: 20px 100px 0 0;
+  text-align: justify;
+`;
+
+export const AboutDescDiv = styled.div`
+  flex: 2;
+`;
+
+export const AboutLinks = styled.div`
+  margin-left: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const AthosDevImg = styled.img`
+  width: 300px;
+  margin-bottom: 20px;
+`;
