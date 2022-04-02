@@ -5,7 +5,8 @@ import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 const Section = ({ sectionTitle, children }) => {
   //Styles
   const PageContainer = styled.div`
-    width: 76vw;
+    width: 75vw;
+    margin-bottom: 20px;
   `;
 
   const SectionTitle = styled.span`
@@ -27,6 +28,7 @@ const Section = ({ sectionTitle, children }) => {
   const SectionWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
+
     //media query
     @media only screen and (max-width: 980px) {
       flex-direction: column;

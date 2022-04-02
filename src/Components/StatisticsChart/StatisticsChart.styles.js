@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StatisticsContainer = styled.div`
   margin: 10px;
+
   padding: 20px 35px;
 
   background-color: ${({ theme }) => theme.body};
@@ -14,4 +15,9 @@ export const StatisticsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+`;
+
+export const YearSelectionDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
