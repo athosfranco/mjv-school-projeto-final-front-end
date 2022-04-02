@@ -52,7 +52,11 @@ export const SidebarMenuBtn = styled(VscListSelection)`
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
-  @media only screen and (min-width: 980px) {
+  @media only screen and (max-width: 1025px) {
+    top: 15px;
+    right: 15px;
+  }
+  @media only screen and (min-width: 1026px) {
     display: none;
   }
 `;

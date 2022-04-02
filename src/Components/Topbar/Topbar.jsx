@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import ModalCtx from "../../Context/ModalContext";
 import LoginCtx from "../../Context/LoginContext";
+import { MdOutlineNightlight } from "react-icons/md";
+import { BsSun } from "react-icons/bs";
+import { IconWrapper } from "../LoginModal/LoginModal.styles";
 import {
   CurrentPage,
+  FlexCol,
   LeftTopbarContent,
   RightTopbarContent,
   TopbarContainer,
@@ -11,8 +15,10 @@ import {
 } from "./Topbar.styles";
 import avatar from "../../Assets/avatar.png";
 import { useLocation } from "react-router-dom";
+import { ThemeCtx } from "../../App";
 
 const Topbar = () => {
+  const { handleToggleTheme, theme } = useContext(ThemeCtx);
   //valor scrollado
   const [offset, setOffset] = useState(0);
 
@@ -88,13 +94,17 @@ const Topbar = () => {
   return (
     <TopbarContainer scroll={offset}>
       <LeftTopbarContent>
-        <CurrentPage>{currPageTitle}</CurrentPage>
-        <WelcomeMsg onClick={logoutHandler}>
-          Olá, {state.userLoggedIn}. Bem vindo ao Sistema de Gestão da MJV Clinic.
-        </WelcomeMsg>
+        <UserAvatar src={avatar} onClick={logoutHandler} />
+        <FlexCol>
+          {" "}
+          <CurrentPage>{currPageTitle}</CurrentPage>
+          <WelcomeMsg onClick={logoutHandler}>
+            Olá, {state.userLoggedIn}. Bem vindo ao Sistema de Gestão da MJV Clinic.
+          </WelcomeMsg>
+        </FlexCol>
       </LeftTopbarContent>
-      <RightTopbarContent onClick={logoutHandler}>
-        <UserAvatar src={avatar} />
+      <RightTopbarContent>
+        <IconWrapper onClick={handleToggleTheme}>{theme == "light" ? <MdOutlineNightlight /> : <BsSun />}</IconWrapper>
       </RightTopbarContent>
     </TopbarContainer>
   );

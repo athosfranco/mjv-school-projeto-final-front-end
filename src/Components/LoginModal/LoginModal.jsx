@@ -7,17 +7,12 @@ import {
   ErrorMsg,
   Form,
   InputWrapper,
-  Logo,
   ModalContainer,
   SecondText,
   TextContentWrapper,
   UserInput,
   Actions,
-  Image,
   IconWrapper,
-  ModalHeader,
-  LogoName1,
-  LogoName2,
 } from "./LoginModal.styles";
 import Button from "../../UI/Button/Button";
 import { ThemeCtx } from "../../App";

@@ -26,10 +26,16 @@ export const TopbarContainer = styled.div`
 
 export const LeftTopbarContent = styled.div`
   display: flex;
-  flex-direction: column;
+
   align-items: flex-start;
   justify-content: center;
   margin-left: 15px;
+`;
+
+export const FlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 `;
 
 export const RightTopbarContent = styled.div`

@@ -81,6 +81,9 @@ export const ArrowRight = styled(AiOutlineArrowRight)`
 export const AboutContainer = styled.div`
   display: flex;
   margin-bottom: 50px;
+  @media only screen and (max-width: 980px) {
+    flex-direction: column;
+  }
 `;
 
 export const AboutTitle = styled.h2`
@@ -91,6 +94,10 @@ export const AboutText = styled.p`
   line-height: 2;
   margin: 20px 100px 0 0;
   text-align: justify;
+  @media only screen and (max-width: 980px) {
+    margin: 20px 10px 0 0;
+    font-size: 14px;
+  }
 `;
 
 export const AboutDescDiv = styled.div`
@@ -104,9 +111,31 @@ export const AboutLinks = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 980px) {
+    margin: 40px 0;
+  }
 `;
 
 export const AthosDevImg = styled.img`
   width: 300px;
   margin-bottom: 20px;
+`;
+
+export const Link = styled.a`
+  width: 300px;
+  text-align: center;
+  margin: 4px;
+  cursor: pointer;
+  padding: 12px 16px;
+  background-color: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
+  border-radius: 24px;
+  box-shadow: 0px 12px 19px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    transform: scale(1.1);
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => "#fff"};
+  }
 `;

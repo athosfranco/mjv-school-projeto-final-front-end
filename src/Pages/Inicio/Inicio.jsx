@@ -8,12 +8,14 @@ import consultaSvg from "../../Assets/consulta_svg.svg";
 import { DataCtx } from "../Dashboard/Dashboard";
 import Section from "../../Components/Section/Section";
 import StatisticsChart from "../../Components/StatisticsChart/StatisticsChart";
-import { AboutContainer, AboutDescDiv, AboutLinks, AboutText, AboutTitle, AthosDevImg } from "./Inicio.styles";
+import { AboutContainer, AboutDescDiv, AboutLinks, AboutText, AboutTitle, AthosDevImg, Link } from "./Inicio.styles";
 import Button from "../../UI/Button/Button";
 import { IconWrapper, GithubIcon, LinkedinIcon } from "../LoginPage/LoginPage.styles";
 import athosDevLogo from "../../Assets/namedev.png";
+import { useNavigate } from "react-router-dom";
 
 const Inicio = () => {
+  let navigate = useNavigate();
   const { medicos, pacientes, consultas } = useContext(DataCtx);
 
   //CARDS DE CIRURGIAS, EXAMES E CONTAS MEDICAS /////////////////////////////////////////////////////////
@@ -94,15 +96,24 @@ const Inicio = () => {
                 <GithubIcon />
               </a>
             </IconWrapper>
-            <Button type="success" margin={"0 0 5px 0"}>
+
+            <Link href="https://github.com/athosfranco/mjv-school-projeto-final" target="_blank" rel="noreferrer">
+              Github Repo (Back-End)
+            </Link>
+            <Link
+              href="https://github.com/athosfranco/mjv-school-projeto-final-front-end"
+              target="_blank"
+              rel="noreferrer"
+            >
               Github Repo (Front-End)
-            </Button>
-            <Button type="success" margin={"0 0 5px 0"}>
-              Githup Repo (Back-End)
-            </Button>
-            <Button type="success" margin={"0 0 5px 0"}>
-              Documentação API
-            </Button>
+            </Link>
+            <Link
+              href="https://athos-clinica-medica-api-mjv.herokuapp.com/swagger-ui/index.html#"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Documentação API (Swagger)
+            </Link>
           </AboutLinks>
         </AboutContainer>
       </Section>

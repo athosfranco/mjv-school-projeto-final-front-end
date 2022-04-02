@@ -10,7 +10,7 @@ const ListaMedico = ({ lista }) => {
   console.log(lista);
   return (
     <ListaContainer>
-      <StyledTable hover responsive>
+      <StyledTable responsive>
         <Thead>
           <Tr>
             <Th>ID</Th>

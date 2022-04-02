@@ -30,7 +30,8 @@ export const NavItem = styled.div`
   }
   //media query
   @media only screen and (max-width: 980px) {
-    margin: 0;
+    margin: 15px 0;
+    padding: 8px;
   }
 `;
 

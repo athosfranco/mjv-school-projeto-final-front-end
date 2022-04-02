@@ -7,7 +7,7 @@ export const CadastrarContainer = styled.div`
   border-radius: 12px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
   padding: 15px;
-  width: 77vw;
+  width: 75vw;
   margin-bottom: 20px;
 `;
 

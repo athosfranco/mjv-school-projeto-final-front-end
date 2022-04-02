@@ -8,9 +8,9 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 //sub-paths do dashboard
 import Inicio from "./Pages/Inicio/Inicio";
 import Paciente from "./Pages/Paciente/Paciente";
-import Configuracoes from "./Pages/Configurações/Configuracoes";
+
 import Medicos from "./Pages/Medicos/Medicos";
-import Receita from "./Pages/Receita/Receita";
+
 import Consultas from "./Pages/Consultas/Consultas";
 import DetalhesPaciente from "./Pages/Paciente/DetalhesPaciente/DetalhesPaciente";
 import DetalhesMedico from "./Pages/Medicos/DetalhesMedico/DetalhesMedico";
@@ -33,8 +33,6 @@ const Rotas = () => {
         { path: "detalhesConsulta", element: <DetalhesConsulta /> },
         { path: "medicos", element: <Medicos /> },
         { path: "consultas", element: <Consultas /> },
-        { path: "receita", element: <Receita /> },
-        { path: "configuracoes", element: <Configuracoes /> },
       ],
     },
   ]);
