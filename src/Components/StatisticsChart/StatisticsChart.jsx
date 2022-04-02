@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,6 +10,8 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { StatisticsContainer } from "./StatisticsChart.styles";
+import { DataCtx } from "../../Pages/Dashboard/Dashboard";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -27,6 +29,62 @@ export const options = {
 };
 
 const labels = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+///////////q
+const [casesPerMonth, setCasesPerMonth] = useState([]);
+
+useEffect(() => {
+  const dataForSelectedYear = dadosListaEspera.filter((caso) => {
+    return caso.CAS_DataCriacao.split("-")[0] == anoSelecionado;
+  });
+
+  console.log(dataForSelectedYear);
+
+  let [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez] = [
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "01";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "02";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "03";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "04";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "05";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "06";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "07";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "08";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "09";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "10";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "11";
+    }).length,
+    dataForSelectedYear.filter((caso) => {
+      return caso.CAS_DataCriacao.split("-")[1] === "12";
+    }).length,
+  ];
+
+  setCasesPerMonth([jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez]);
+}, [dadosListaEspera, anoSelecionado]);
+
+console.log(casesPerMonth);
+
+////////////
 
 export const data = {
   labels,
@@ -53,10 +111,12 @@ export const data = {
 };
 
 const StatisticsChart = () => {
+  ////
+  const { medicos, pacientes, consultas } = useContext(DataCtx);
   return (
-    <div>
+    <StatisticsContainer>
       <Line options={options} data={data} />
-    </div>
+    </StatisticsContainer>
   );
 };
 
