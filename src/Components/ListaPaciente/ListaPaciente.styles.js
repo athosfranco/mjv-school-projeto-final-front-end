@@ -45,7 +45,7 @@ export const Tbody = styled.tbody``;
 export const PacienteRow = styled.tr`
   cursor: pointer;
   &:hover {
-    background-color: #eeeeee;
+    background-color: ${({ theme }) => theme.background};
   }
 `;
 

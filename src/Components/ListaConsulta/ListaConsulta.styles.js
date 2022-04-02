@@ -46,7 +46,7 @@ export const Tbody = styled.tbody``;
 export const ConsultaRow = styled.tr`
   cursor: pointer;
   &:hover {
-    background-color: #eeeeee;
+    background-color: ${({ theme }) => theme.background};
   }
 `;
 

@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { Details, DetalhesContainer, InfoTitle, InfoValue, InfoWrap } from "./DetalhesPaciente.styles";
-import { FirstText } from "../../../Components/LoginModal/LoginModal.styles";
+
 import { Divider, SectionTitle } from "../../Pages.styles";
-import { InfoWrapper } from "../../../Components/CasoDeAnalise/CasoDeAnalise.styles";
+
 import { formatarDataSemHora, formatarIdade, getFormattedDate } from "../../../GeneralFunctions";
 import CadastrarPaciente from "../CadastrarPaciente/CadastrarPaciente";
 import LoadingOverlay from "../../../Components/LoadingOverlay/LoadingOverlay";

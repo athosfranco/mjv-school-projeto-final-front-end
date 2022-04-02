@@ -18,7 +18,7 @@ export const Details = styled.div`
 export const InfoWrap = styled.div`
   display: flex;
   padding: 10px;
-  background-color: #eeeeee;
+  background-color: ${({ theme }) => theme.background};
   margin: 5px;
 `;
 

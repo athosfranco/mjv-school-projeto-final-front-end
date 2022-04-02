@@ -50,6 +50,7 @@ const Section = ({ sectionTitle, children }) => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     &:hover {
       transform: scale(1.2);
       color: ${({ theme }) => theme.primary};

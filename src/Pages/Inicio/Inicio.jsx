@@ -9,7 +9,7 @@ import { DataCtx } from "../Dashboard/Dashboard";
 import Section from "../../Components/Section/Section";
 import StatisticsChart from "../../Components/StatisticsChart/StatisticsChart";
 import { AboutContainer, AboutDescDiv, AboutLinks, AboutText, AboutTitle, AthosDevImg, Link } from "./Inicio.styles";
-import Button from "../../UI/Button/Button";
+
 import { IconWrapper, GithubIcon, LinkedinIcon } from "../LoginPage/LoginPage.styles";
 import athosDevLogo from "../../Assets/namedev.png";
 import { useNavigate } from "react-router-dom";
@@ -26,18 +26,21 @@ const Inicio = () => {
       title: "Pacientes",
       value: pacientes.data.length,
       img: pacienteSvg,
+      path: "./pacientes",
     },
     {
       id: 2,
       title: "Médicos",
       value: medicos.data.length,
       img: medicoSvg,
+      path: "./medicos",
     },
     {
       id: 3,
       title: "Consultas",
       value: consultas.data.length,
       img: consultaSvg,
+      path: "./consultas",
     },
   ];
 
@@ -53,7 +56,7 @@ const Inicio = () => {
                 img={card.img}
                 key={card.id}
                 onClick={() => {
-                  alert(card.title);
+                  navigate(card.path, { replace: true });
                 }}
               />
             );
